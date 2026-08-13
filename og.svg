@@ -1,0 +1,46 @@
+<!-- Source for og.png (the social preview image, 1200x630).
+     Edit this, then regenerate with:
+       qlmanage -t -s 1200 -o . og.svg ; sips -c 630 1200 og.svg.png ; mv og.svg.png og.png
+     The canvas is square because Quick Look renders SVGs into a square
+     thumbnail; the crop above takes the centre 630px band, so all artwork
+     lives between y=285 and y=915. Uses system fonts, since the preview is
+     rendered once as a flat image. Palette matches index.html. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <radialGradient id="a" cx="8%"  cy="30%" r="42%"><stop offset="0" stop-color="#C4694F"/><stop offset="1" stop-color="#C4694F" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b" cx="34%" cy="20%" r="36%"><stop offset="0" stop-color="#D08466"/><stop offset="1" stop-color="#D08466" stop-opacity="0"/></radialGradient>
+    <radialGradient id="c" cx="76%" cy="22%" r="36%"><stop offset="0" stop-color="#C9A227"/><stop offset="1" stop-color="#C9A227" stop-opacity="0"/></radialGradient>
+    <radialGradient id="d" cx="97%" cy="42%" r="34%"><stop offset="0" stop-color="#DE9BB4"/><stop offset="1" stop-color="#DE9BB4" stop-opacity="0"/></radialGradient>
+    <radialGradient id="e" cx="90%" cy="66%" r="34%"><stop offset="0" stop-color="#A87289"/><stop offset="1" stop-color="#A87289" stop-opacity="0"/></radialGradient>
+    <radialGradient id="f" cx="70%" cy="88%" r="32%"><stop offset="0" stop-color="#6E8C4A"/><stop offset="1" stop-color="#6E8C4A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g" cx="24%" cy="90%" r="36%"><stop offset="0" stop-color="#7593BC"/><stop offset="1" stop-color="#7593BC" stop-opacity="0"/></radialGradient>
+    <radialGradient id="h" cx="4%"  cy="62%" r="30%"><stop offset="0" stop-color="#DE9BB4"/><stop offset="1" stop-color="#DE9BB4" stop-opacity="0"/></radialGradient>
+    <radialGradient id="i" cx="46%" cy="54%" r="34%"><stop offset="0" stop-color="#E8C9A0"/><stop offset="1" stop-color="#E8C9A0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="j" cx="16%" cy="44%" r="30%"><stop offset="0" stop-color="#CBA173"/><stop offset="1" stop-color="#CBA173" stop-opacity="0"/></radialGradient>
+    <radialGradient id="wash" cx="30%" cy="50%" r="44%"><stop offset="0" stop-color="#FFFAF0" stop-opacity="0.42"/><stop offset="1" stop-color="#FFFAF0" stop-opacity="0"/></radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+
+  <rect width="1200" height="1200" fill="#EFE8DB"/>
+  <g>
+    <rect width="1200" height="1200" fill="url(#a)"/>
+    <rect width="1200" height="1200" fill="url(#b)"/>
+    <rect width="1200" height="1200" fill="url(#c)"/>
+    <rect width="1200" height="1200" fill="url(#d)"/>
+    <rect width="1200" height="1200" fill="url(#e)"/>
+    <rect width="1200" height="1200" fill="url(#f)"/>
+    <rect width="1200" height="1200" fill="url(#g)"/>
+    <rect width="1200" height="1200" fill="url(#h)"/>
+    <rect width="1200" height="1200" fill="url(#i)"/>
+    <rect width="1200" height="1200" fill="url(#j)"/>
+    <rect width="1200" height="1200" fill="url(#wash)"/>
+  </g>
+  <rect width="1200" height="1200" filter="url(#grain)" opacity="0.30" style="mix-blend-mode:multiply"/>
+
+  <g font-family="Helvetica Neue, Helvetica, Arial" font-weight="300" font-size="104" letter-spacing="-3.5" fill="#241F1B">
+    <text x="110" y="530">artificial</text>
+    <text x="110" y="638">intelligence</text>
+  </g>
+  <text x="114" y="704" font-family="Georgia, serif" font-size="32" fill="#241F1B" fill-opacity="0.72">/ˌɑːrtɪˈfɪʃl ɪnˈtelɪdʒəns/</text>
+  <text x="114" y="802" font-family="Georgia, serif" font-size="34" fill="#241F1B">The definition is being designed.</text>
+</svg>
