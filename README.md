@@ -1,12 +1,11 @@
-# AI Is a Spectrum
+# AI is a spectrum
 
-A small, shareable thought experiment about the many shapes a human–machine
-interaction can take, built around one ordinary morning: working out what the
-kids should wear.
+A companion site to the essay: chat is one way to interact with AI, not the
+only one. Version 0.1 — a landing section, one interactive example, four
+real projects, and a note that it will grow.
 
-Next.js (App Router), React, TypeScript, Tailwind. No backend, no database, no
-API calls, no analytics. The visitor's answers live in the URL and nowhere
-else, so a link is the whole share mechanism.
+Next.js (App Router), React, TypeScript, Tailwind. No backend, database, CMS,
+auth, analytics or AI API calls. All data is static objects in `content/`.
 
 ```bash
 npm install
@@ -15,42 +14,46 @@ npm run build
 npm run lint    # tsc --noEmit
 ```
 
-## Editing the content
-
-Everything writable is in `content/`, separate from the components:
+## Editing
 
 | File | What's in it |
 | --- | --- |
-| `content/copy.ts` | All the prose — hero, scenario, section headings, closing, essay link. |
-| `content/dimensions.ts` | The four questions and their answers. Option `id`s appear in share URLs, so renaming one breaks old links. |
-| `content/concepts.ts` | The eight sketches: traits, what the person experiences, what the machine does, and the honest caveat. |
+| `content/site.ts` | Title, description, author — and `essayUrl`, which every "Read the essay" link uses. Replace it in one place when the essay is live. |
+| `content/copy.ts` | All section prose, including the loose list of interaction modes. |
+| `content/interactions.ts` | The four models in the interactive example. `id` picks the mockup component. |
+| `content/examples.ts` | The collection. Add an entry and a card appears. |
 
-Adding a sketch means adding an entry to `content/concepts.ts`, drawing it in
-`components/illustrations/sketches.tsx` on the same 360×230 stage, and
-registering it in the `sketches` map at the bottom of that file.
+Adding an example is one object in `content/examples.ts` — the card pulls its
+own link hostname, so there's nothing else to fill in.
 
-## How the matching works
+Adding a fifth interaction model means an entry in `content/interactions.ts`,
+a mockup component in `components/demos/`, and one line in the `panels` map in
+`components/SpectrumDemo.tsx`.
 
-`lib/match.ts` scores every sketch against the four answers and shows the
-nearest. Option order counts — a neighbouring answer is a near miss, the two
-ends are a full one — and *presence* ("where should it live") is weighted
-heavily enough to act as a filter, so asking for something in the room always
-returns something in the room. When the nearest sketch doesn't honour every
-answer, the panel says which ones it misses rather than quietly rounding.
+## Structure
 
-Every one of the 36 combinations resolves to a sketch, and each of the eight is
-an exact match for exactly one combination.
+- `components/SpectrumDemo.tsx` — the centerpiece. A real tablist: one tab
+  stop for the set, arrow keys between tabs, Home and End for the ends.
+- `components/demos/` — the four mockups, plus the shared garment glyphs.
+  They're deliberately plain DOM rather than images, so they stay legible at
+  any size and adapt to the palette.
+- `components/SectionHeading.tsx` — the numbered rule used by each section.
 
 ## Design
 
 Type and colour come from [emmaklint.com](https://emmaklint.com): Bricolage
-Grotesque for display, Azeret Mono for the small labels, system sans for
-reading, and the crayon palette — blush ground, olive, moss, wall pink and
-crayon orange. The tokens are declared once in `app/globals.css` under
-`@theme`.
+Grotesque for display, Azeret Mono for small labels, system sans for reading,
+and the crayon palette — blush ground, olive, wall pink and crayon orange.
+Tokens are declared once in `app/globals.css` under `@theme`.
+
+Reduced motion is respected globally; the only animation is the panel
+cross-fade.
 
 ## Notes
 
-- The holding page this replaced is kept at `public/coming-soon.html`.
-- `public/og.svg` is the source for `public/og.png`; regeneration steps are in
-  a comment at the top of the SVG.
+- The earlier holding page is kept at `public/coming-soon.html`.
+- `vercel.json` declares the framework. The Vercel project was imported when
+  this repo was a single static `index.html`, and without that declaration it
+  publishes `public/` as the site root and `/` returns 404.
+- `public/og.svg` is the source for `public/og.png`; both still carry the
+  holding page's artwork and need redoing.

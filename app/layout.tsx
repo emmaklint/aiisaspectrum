@@ -1,15 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { site } from "@/content/copy";
+import { site } from "@/content/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.title} — ${site.tagline}`,
+  title: `${site.title} — chat is one way to interact with AI`,
   description: site.description,
   openGraph: {
     type: "website",
     url: site.url,
-    title: `${site.title} — ${site.tagline}`,
+    title: `${site.title} — chat is one way to interact with AI`,
     description: site.description,
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
@@ -45,10 +45,10 @@ export default function RootLayout({
       </head>
       <body>
         <a
-          href="#explore"
+          href="#spectrum"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:border focus:border-ink focus:bg-paper focus:px-5 focus:py-2 focus:text-sm"
         >
-          Skip to the explorer
+          Skip to the interactive example
         </a>
         {children}
       </body>
