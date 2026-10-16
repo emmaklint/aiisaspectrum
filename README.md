@@ -27,10 +27,10 @@ npm run lint    # tsc --noEmit
 
 ## Pages
 
-- `/` home: the title, one line on what the site believes, and two doors, Bits and Examples.
+- `/` home: the title, one line on what the site believes, and two doors, Bits and In the wild.
 - `/bits` and `/bits/<slug>`: one page per live bit, framed by `components/bits/BitFrame.tsx`, which also lists the examples that share the bit's way of interacting.
-- `/examples`: the collection, filterable by way (`/examples?way=point`).
-- `/about`: the essay, the inspirational bits method and references.
+- `/examples` ("In the wild"): the collection, filterable by way (`/examples?way=point`).
+- About lives in the shared footer (`#about`) on every page; `/about` redirects there.
 
 Adding a bit: an entry in `content/bits.ts` with `live: true`, a component in `components/bits/`, and a page at `app/bits/<slug>/page.tsx`.
 

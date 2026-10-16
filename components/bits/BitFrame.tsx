@@ -54,7 +54,7 @@ export function BitFrame({
           </ul>
           <p className="mt-4 text-[0.9rem]">
             <Link href={`/examples?way=${bit.way}`} className="text-ink underline decoration-ink/40 underline-offset-4 hover:decoration-ink">
-              See all examples
+              See more in the wild
             </Link>
           </p>
         </section>
@@ -63,7 +63,7 @@ export function BitFrame({
       <section className="mt-12 space-y-2 text-[0.88rem] leading-relaxed text-ink-quiet">
         <p>
           {method.short}{" "}
-          <Link href="/about" className="text-ink underline decoration-ink/40 underline-offset-4">More about the method</Link>
+          <a href="#about" className="text-ink underline decoration-ink/40 underline-offset-4">More about the method</a>
         </p>
         <p>{method.noAi}</p>
       </section>

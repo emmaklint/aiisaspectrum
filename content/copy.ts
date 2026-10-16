@@ -4,8 +4,8 @@ export const home = {
   headline: "AI is a spectrum",
   belief:
     "Using AI doesn’t have to mean opening a chat and explaining what you want. Once we stop assuming it does, there are so many more possibilities.",
-  bits: { title: "Try a bit", body: "Small experiments. Feel what AI can do without a chat box." },
-  examples: { title: "Browse examples", body: "What people are already building beyond the chat box." },
+  bits: { title: "Bits", body: "Small experiments to play with. Feel what AI can do without a chat box." },
+  examples: { title: "In the wild", body: "Products and research already doing it: pointing, noticing, stepping in." },
 };
 
 export const bitsPage = {
@@ -14,8 +14,8 @@ export const bitsPage = {
 };
 
 export const examplesPage = {
-  heading: "Examples",
-  intro: "AI interaction beyond the chat box.",
+  heading: "In the wild",
+  intro: "Products and research already interacting with AI beyond the chat box.",
 };
 
 export const about = {

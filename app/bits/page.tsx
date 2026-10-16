@@ -56,7 +56,7 @@ export default function BitsPage() {
         })}
 
         <p className="text-[0.9rem] text-ink-quiet">
-          <Link href="/about" className="text-ink underline decoration-crayon decoration-2 underline-offset-4">About the method</Link>
+          <a href="#about" className="text-ink underline decoration-crayon decoration-2 underline-offset-4">About the method</a>
         </p>
       </div>
     </main>

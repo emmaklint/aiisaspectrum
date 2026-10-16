@@ -1,46 +1,34 @@
 import Link from "next/link";
 import { home } from "@/content/copy";
-import { site } from "@/content/site";
 
 const doors = [
-  { href: "/bits", ...home.bits, tone: "bg-crayon-pink" },
-  { href: "/examples", ...home.examples, tone: "bg-paper" },
+  { href: "/bits", ...home.bits },
+  { href: "/examples", ...home.examples },
 ];
 
 export default function Page() {
   return (
-    <main id="main">
-      <div className="mx-auto flex max-w-5xl flex-col px-6 py-20 sm:px-8 sm:py-28">
-        <h1 className="text-[3.6rem] leading-[0.9] sm:text-[6rem] lg:text-[8rem]">
-          {home.headline}
-        </h1>
-        <p className="mt-8 max-w-[34ch] text-[1.25rem] leading-snug sm:text-[1.5rem]">
-          {home.belief}
-        </p>
+    <main id="main" className="mx-auto max-w-5xl px-6 pb-16 pt-10 sm:px-8 sm:pt-16">
+      <h1 className="text-[clamp(3.6rem,15vw,10.5rem)] leading-[0.82] tracking-[-0.045em]">
+        AI is a{" "}
+        <span className="inline-block bg-linear-to-r from-crayon via-crayon to-moss bg-clip-text pb-[0.12em] text-transparent">spectrum</span>
+      </h1>
 
-        <ul className="mt-14 grid gap-4 sm:grid-cols-2">
-          {doors.map((door) => (
-            <li key={door.href}>
-              <Link
-                href={door.href}
-                className={`group flex h-full flex-col rounded-2xl border-[1.5px] border-ink p-6 no-underline sm:p-7 ${door.tone}`}
-              >
-                <span className="font-display text-[1.8rem] font-bold leading-none sm:text-[2.2rem]">
-                  {door.title}{" "}
-                  <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                </span>
-                <span className="mt-3 text-[1rem] leading-relaxed text-ink-muted">{door.body}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <p className="mt-8 max-w-[30ch] text-[1.3rem] leading-snug sm:mt-10 sm:text-[1.6rem]">{home.belief}</p>
 
-        <p className="mt-16 text-[0.95rem]">
-          <a href={site.essayUrl} className="text-ink underline decoration-crayon decoration-2 underline-offset-4">
-            {site.essayLabel}
-          </a>
-        </p>
-      </div>
+      <ul className="mt-14 grid gap-x-10 gap-y-8 sm:mt-20 sm:grid-cols-2">
+        {doors.map((door) => (
+          <li key={door.href}>
+            <Link href={door.href} className="group block border-t-[3px] border-ink pt-4 no-underline">
+              <span className="flex items-baseline justify-between gap-4 font-display text-[2.6rem] font-bold leading-none tracking-tight sm:text-[3.4rem]">
+                {door.title}
+                <span aria-hidden="true" className="text-crayon transition-transform group-hover:translate-x-1.5">→</span>
+              </span>
+              <span className="mt-3 block max-w-[36ch] text-[1rem] leading-relaxed text-ink-muted">{door.body}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

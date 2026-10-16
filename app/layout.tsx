@@ -52,6 +52,12 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <div aria-hidden="true" className="flex h-1.5">
+          <span className="flex-1 bg-crayon" />
+          <span className="flex-1 bg-crayon-pink" />
+          <span className="flex-1 bg-olive" />
+          <span className="flex-1 bg-moss" />
+        </div>
         <SiteNav />
         {children}
         <SiteFooter />
