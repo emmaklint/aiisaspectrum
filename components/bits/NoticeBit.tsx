@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ChatInput } from "./ui";
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Next week"];
 const NOTICE_AT = 3;
@@ -37,6 +38,23 @@ const start = (): Task[] => [
 type Mode = "assistant" | "planner";
 const cheer = ["Done!", "All set!", "Sure thing!", "No problem!", "Easy!"];
 
+const TASK_WORDS: [RegExp, string][] = [
+  [/tax/, "tax"],
+  [/dentist|teeth/, "dentist"],
+  [/trouser|rain|pants/, "trousers"],
+  [/swap|clothes/, "swap"],
+  [/librar|book/, "library"],
+  [/fridge/, "fridge"],
+];
+const DAY_WORDS: [RegExp, number][] = [
+  [/next week/, 5],
+  [/\bmon(day)?\b/, 0],
+  [/\btue(s|sday)?\b/, 1],
+  [/\bwed(nesday)?\b/, 2],
+  [/\bthu(rs|rsday)?\b/, 3],
+  [/\bfri(day)?\b/, 4],
+];
+
 export function NoticeBit() {
   const [mode, setMode] = useState<Mode>("assistant");
   const [tasks, setTasks] = useState<Task[]>(start);
@@ -45,6 +63,35 @@ export function NoticeBit() {
   const [asking, setAsking] = useState<string | null>(null);
   const [dragging, setDragging] = useState<string | null>(null);
   const [assistantMoves, setAssistantMoves] = useState(0);
+  const [draft, setDraft] = useState("");
+  const logRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    logRef.current?.scrollTo({ top: logRef.current.scrollHeight });
+  }, [log]);
+
+  /** The assistant understands "push the taxes to Thursday", "move the fridge to tomorrow". */
+  function tell() {
+    const text = draft.trim();
+    if (!text) return;
+    setDraft("");
+    const t = text.toLowerCase();
+    const said = (reply: string) => setLog((l) => [...l, `You: ${text}`, reply]);
+    const id = TASK_WORDS.find(([r]) => r.test(t))?.[1];
+    const task = tasks.find((x) => x.id === id);
+    if (!task) {
+      said("Which task? Just say something like “move the taxes to Thursday”.");
+      return;
+    }
+    let day = DAY_WORDS.find(([r]) => r.test(t))?.[1];
+    if (day === undefined) day = Math.min(5, task.day + 1);
+    if (day === task.day) {
+      said(`“${task.title}” is already on ${day === 5 ? "next week" : DAYS[day]}.`);
+      return;
+    }
+    setLog((l) => [...l, `You: ${text}`]);
+    moveTo(task.id, day);
+  }
 
   function moveTo(id: string, day: number) {
     const task = tasks.find((t) => t.id === id);
@@ -89,6 +136,7 @@ export function NoticeBit() {
     setMaybe([]);
     setAsking(null);
     setAssistantMoves(0);
+    setDraft("");
   }
 
   const noticing = (t: Task) => mode === "planner" && !t.settled && t.moves >= NOTICE_AT;
@@ -193,12 +241,21 @@ export function NoticeBit() {
 
       {mode === "assistant" ? (
         <div className="space-y-3">
-          <div className="flex max-h-48 flex-col gap-2 overflow-y-auto rounded-xl border-[1.5px] border-ink bg-paper p-3" aria-live="polite">
-            {log.map((m, i) => (
-              <p key={i} className="max-w-[90%] self-start rounded-2xl rounded-bl-sm bg-blush px-3.5 py-2 text-[0.9rem] leading-snug">
-                {m}
-              </p>
-            ))}
+          <div className="flex flex-col gap-3 rounded-xl border-[1.5px] border-ink bg-paper p-3">
+            <div ref={logRef} className="flex max-h-56 flex-col gap-2 overflow-y-auto" aria-live="polite">
+              {log.map((m, i) =>
+                m.startsWith("You: ") ? (
+                  <p key={i} className="max-w-[90%] self-end rounded-2xl rounded-br-sm bg-ink px-3.5 py-2 text-[0.9rem] leading-snug text-blush">
+                    {m.slice(5)}
+                  </p>
+                ) : (
+                  <p key={i} className="max-w-[90%] self-start rounded-2xl rounded-bl-sm bg-blush px-3.5 py-2 text-[0.9rem] leading-snug">
+                    {m}
+                  </p>
+                ),
+              )}
+            </div>
+            <ChatInput id="planner-chat" value={draft} onChange={setDraft} onSend={tell} placeholder="Push the taxes to tomorrow…" />
           </div>
           {assistantMoves >= 4 && (
             <p className="font-display text-[1.2rem] font-semibold">

@@ -24,9 +24,13 @@ export function BitFrame({
 
   return (
     <main id="main" className={`mx-auto ${wide ? "max-w-5xl" : "max-w-3xl"} px-6 py-14 sm:px-8 sm:py-20`}>
-      <p className="tag">
-        <Link href="/bits" className="no-underline hover:text-ink">Bits</Link> · {capabilities[bit.capability].label}
-      </p>
+      <Link
+        href="/bits"
+        className="inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-ink/30 px-3.5 py-1 text-[0.88rem] font-medium no-underline hover:border-ink"
+      >
+        <span aria-hidden="true">←</span> All bits
+      </Link>
+      <p className="tag mt-6">{capabilities[bit.capability].label}</p>
       <h1 className="mt-2 text-[2.6rem] leading-[0.95] text-balance sm:text-[3.6rem]">{bit.title}</h1>
       <p className="mt-5 max-w-[48ch] text-[1.1rem] leading-relaxed">{lede}</p>
 
@@ -60,6 +64,11 @@ export function BitFrame({
         </p>
         <p>{method.noAi}</p>
       </section>
+      <p className="mt-10">
+        <Link href="/bits" className="font-medium underline decoration-crayon decoration-2 underline-offset-4">
+          ← Back to all bits
+        </Link>
+      </p>
     </main>
   );
 }
