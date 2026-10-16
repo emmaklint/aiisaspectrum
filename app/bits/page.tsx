@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
-import { bits, method } from "@/content/bits";
+import { bits } from "@/content/bits";
 import { bitsPage } from "@/content/copy";
 import { ways } from "@/content/ways";
 
@@ -22,10 +22,6 @@ export default function BitsPage() {
                 <span className="tag">{bit.live ? ways[bit.way].label : "On the way"}</span>
                 <span className="mt-3 font-display text-[1.6rem] font-bold leading-tight">{bit.title}</span>
                 <span className="mt-2 text-[0.98rem] leading-relaxed text-ink-muted">{bit.task}</span>
-                <span className="mt-4 text-[0.88rem] text-ink-quiet">
-                  {bit.versus[0]} <span aria-hidden="true">↔</span>
-                  <span className="sr-only">versus</span> {bit.versus[1]}
-                </span>
                 {bit.live && (
                   <span className="mt-6 font-medium">
                     Try it{" "}
@@ -52,8 +48,8 @@ export default function BitsPage() {
             );
           })}
         </ul>
-        <p className="mt-10 max-w-[60ch] text-[0.9rem] leading-relaxed text-ink-quiet">
-          {method.short} <Link href="/about" className="text-ink underline decoration-crayon decoration-2 underline-offset-4">More about the method</Link>
+        <p className="mt-10 text-[0.9rem] text-ink-quiet">
+          <Link href="/about" className="text-ink underline decoration-crayon decoration-2 underline-offset-4">About the method</Link>
         </p>
       </section>
     </main>
