@@ -21,6 +21,14 @@ export default function AboutPage() {
           </p>
         </div>
 
+        <h2 className="mt-14 border-t-2 border-ink pt-4 text-[1.8rem] leading-tight">{about.whoHeading}</h2>
+        <p className="mt-5 max-w-[60ch] text-[1.02rem] leading-relaxed text-ink-muted">
+          {about.who}{" "}
+          <a href={about.newsletterUrl} className="text-ink underline decoration-crayon decoration-2 underline-offset-4">
+            Read the newsletter
+          </a>
+        </p>
+
         <h2 className="mt-14 border-t-2 border-ink pt-4 text-[1.8rem] leading-tight">{about.methodHeading}</h2>
         <div className="mt-5 max-w-[60ch] space-y-4 text-[1.02rem] leading-relaxed text-ink-muted">
           {about.method.map((p) => (

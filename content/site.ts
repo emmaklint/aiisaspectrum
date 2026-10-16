@@ -13,7 +13,7 @@ export const site = {
 
   author: {
     name: "Emma Klint",
-    role: "Designer and writer exploring AI, interaction and augmentation.",
+    role: "Designer on a mission to redesign technology so more ways to be human become possible.",
     url: "https://emmaklint.com",
   },
 };

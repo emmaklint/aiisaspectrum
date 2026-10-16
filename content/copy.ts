@@ -23,6 +23,9 @@ export const about = {
   body: [
     "A companion to my essay on why chat is stuck in the middle. The examples collect what people are already building. The bits let you feel the difference yourself.",
   ],
+  whoHeading: "Who's behind it",
+  who: "I'm Emma Klint, a designer and writer in Stockholm with an MSc in HCI. I explore AI as augmentation: expanding what it can be and what we can make with it. I write about AI, neurodivergence and living with technology that thinks in (Over)Thinking Out Loud.",
+  newsletterUrl: "https://emmaklint.substack.com/",
   methodHeading: "The method",
   method: [
     "An inspirational bit is a simple, working thing that lets you understand one property of a technology by using it (Sundström et al. 2011). I first used the method in my master’s thesis at KTH (Klint 2018), to help designers and developers imagine new uses for augmented reality.",
