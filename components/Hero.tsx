@@ -1,5 +1,5 @@
-import { hero } from "@/content/copy";
-import { site } from "@/content/site";
+import Link from "next/link";
+import { doors, hero } from "@/content/copy";
 
 export function Hero() {
   return (
@@ -18,19 +18,19 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <a
-            href="#spectrum"
+        <div className="mt-10 flex flex-wrap items-center gap-3">
+          <Link
+            href="/bits"
             className="rounded-full bg-ink px-6 py-3 font-medium text-blush no-underline transition-opacity hover:opacity-85"
           >
-            {hero.cta} ↓
-          </a>
-          <a
-            href={site.essayUrl}
-            className="text-[0.92rem] text-ink underline decoration-ink/40 underline-offset-4 hover:decoration-ink"
+            {doors.bits.cta} →
+          </Link>
+          <Link
+            href="/examples"
+            className="rounded-full border-[1.5px] border-ink px-6 py-3 font-medium text-ink no-underline transition-colors hover:bg-ink/10"
           >
-            {site.essayLabel}
-          </a>
+            {doors.examples.cta}
+          </Link>
         </div>
       </div>
     </header>

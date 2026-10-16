@@ -1,37 +1,53 @@
+import type { Way } from "./ways";
+
 /**
- * The collection. Four for now — add an entry and it appears on the page.
+ * The collection. Add an entry and it appears on the examples page.
+ * `ways` decides which filters it shows up under, and links it to any bit
+ * that lets you feel the same way of interacting.
  */
 export type Example = {
   name: string;
   /** One sentence on the interaction idea, not on the product. */
   idea: string;
-  tag: string;
+  kind: "Product" | "Research" | "Idea";
+  ways: Way[];
   href: string;
 };
 
 export const examples: Example[] = [
   {
     name: "Moonjar",
-    idea: "Feedback for coding agents can live as comments attached directly to the thing being changed rather than in a separate chat.",
-    tag: "Contextual interaction",
+    idea: "Instead of a chat beside the work, you click on part of a generated product screenshot and ask for changes right there.",
+    kind: "Product",
+    ways: ["point"],
     href: "https://moonjar.ai/features",
   },
   {
     name: "DynaVis",
-    idea: "Natural language can create interface controls that the user then manipulates directly.",
-    tag: "Generated controls",
+    idea: "Ask for a change to a chart and get a control, like a slider, so you can stop explaining and adjust it yourself.",
+    kind: "Research",
+    ways: ["adjust"],
     href: "https://www.microsoft.com/en-us/research/publication/dynavis-dynamically-synthesized-ui-widgets-for-visualization-editing/",
   },
   {
     name: "Misty",
-    idea: "Designers can select and drag parts of one interface onto another to communicate what qualities they want transferred.",
-    tag: "Direct manipulation",
+    idea: "Drag part of one interface design onto another to show which qualities you want carried across.",
+    kind: "Research",
+    ways: ["demonstrate", "point"],
     href: "https://machinelearning.apple.com/research/interactive-prototyping",
   },
   {
     name: "Jelly",
-    idea: "The AI can generate and reshape the interface itself around the task rather than only generating content inside a fixed UI.",
-    tag: "Generative interface",
+    idea: "Describe what you are trying to do, and a small tool takes shape around the task and keeps changing as it does.",
+    kind: "Research",
+    ways: ["reshape"],
     href: "https://doi.org/10.1145/3706598.3713285",
+  },
+  {
+    name: "Orality",
+    idea: "Think out loud, and your thoughts land as clusters on a canvas you can rearrange by hand or by voice, instead of in a growing chat thread.",
+    kind: "Research",
+    ways: ["reshape", "stepIn"],
+    href: "https://arxiv.org/abs/2603.02544",
   },
 ];

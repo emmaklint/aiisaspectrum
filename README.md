@@ -21,7 +21,18 @@ npm run lint    # tsc --noEmit
 | `content/site.ts` | Title, description, author — and `essayUrl`, which every "Read the essay" link uses. Replace it in one place when the essay is live. |
 | `content/copy.ts` | All section prose, including the loose list of interaction modes. |
 | `content/interactions.ts` | The four models in the interactive example. `id` picks the mockup component. |
-| `content/examples.ts` | The collection. Add an entry and a card appears. |
+| `content/ways.ts` | Ways of interacting. They tag the examples and tie each bit to them. |
+| `content/bits.ts` | The bits, live and on the way, plus the method note shown under each bit. |
+| `content/examples.ts` | The collection. Add an entry, tag it with `ways`, and a card appears. |
+
+## Pages
+
+- `/` home: the four-interactions demo and two doors, Bits and Examples.
+- `/bits` and `/bits/<slug>`: one page per live bit, framed by `components/bits/BitFrame.tsx`, which also lists the examples that share the bit's way of interacting.
+- `/examples`: the collection, filterable by way (`/examples?way=point`).
+- `/about`: the essay, the inspirational bits method and references.
+
+Adding a bit: an entry in `content/bits.ts` with `live: true`, a component in `components/bits/`, and a page at `app/bits/<slug>/page.tsx`.
 
 Adding an example is one object in `content/examples.ts` — the card pulls its
 own link hostname, so there's nothing else to fill in.

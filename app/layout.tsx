@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { site } from "@/content/site";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteNav } from "@/components/SiteNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -45,12 +47,14 @@ export default function RootLayout({
       </head>
       <body>
         <a
-          href="#spectrum"
+          href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:border focus:border-ink focus:bg-paper focus:px-5 focus:py-2 focus:text-sm"
         >
-          Skip to the interactive example
+          Skip to content
         </a>
+        <SiteNav />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

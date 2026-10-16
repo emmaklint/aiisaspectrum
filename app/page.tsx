@@ -1,7 +1,6 @@
 import { Closing } from "@/components/Closing";
-import { Examples } from "@/components/Examples";
+import { Doors } from "@/components/Doors";
 import { Hero } from "@/components/Hero";
-import { Modes } from "@/components/Modes";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SpectrumDemo } from "@/components/SpectrumDemo";
 import { demo } from "@/content/copy";
@@ -10,7 +9,7 @@ export default function Page() {
   return (
     <>
       <Hero />
-      <main>
+      <main id="main">
         <section
           id="spectrum"
           className="mx-auto max-w-5xl scroll-mt-4 px-6 py-20 sm:px-8 sm:py-24"
@@ -24,8 +23,7 @@ export default function Page() {
           </div>
         </section>
 
-        <Modes />
-        <Examples />
+        <Doors />
         <Closing />
       </main>
     </>
