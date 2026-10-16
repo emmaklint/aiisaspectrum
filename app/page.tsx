@@ -9,12 +9,11 @@ const doors = [
 export default function Page() {
   return (
     <main id="main" className="mx-auto max-w-5xl px-6 pb-16 pt-10 sm:px-8 sm:pt-16">
-      <h1 className="text-[clamp(3.6rem,15vw,10.5rem)] leading-[0.82] tracking-[-0.045em]">
-        AI is a{" "}
-        <span className="inline-block bg-linear-to-r from-crayon via-crayon to-moss bg-clip-text pb-[0.12em] text-transparent">spectrum</span>
+      <h1 className="text-center text-[clamp(3.6rem,15vw,10.5rem)] leading-[0.86] tracking-[-0.045em] text-balance">
+        {home.headline}
       </h1>
 
-      <p className="mt-8 max-w-[30ch] text-[1.3rem] leading-snug sm:mt-10 sm:text-[1.6rem]">{home.belief}</p>
+      <p className="mx-auto mt-8 max-w-[30ch] text-center text-[1.3rem] leading-snug text-balance sm:mt-10 sm:text-[1.6rem]">{home.belief}</p>
 
       <ul className="mt-14 grid gap-x-10 gap-y-8 sm:mt-20 sm:grid-cols-2">
         {doors.map((door) => (
