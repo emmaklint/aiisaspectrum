@@ -49,7 +49,7 @@ export const bits: Bit[] = [
     task: "Ramble, and watch your thoughts land as clusters you can move.",
     capability: "interpret",
     way: "reshape",
-    live: false,
+    live: true,
   },
   {
     slug: "ten-options",
@@ -57,7 +57,7 @@ export const bits: Bit[] = [
     task: "Pick from a spread instead of asking again and again.",
     capability: "generate",
     way: "choose",
-    live: false,
+    live: true,
   },
   {
     slug: "step-in-halfway",
@@ -65,7 +65,7 @@ export const bits: Bit[] = [
     task: "Watch the AI work on a plan, and take over one part.",
     capability: "act",
     way: "stepIn",
-    live: false,
+    live: true,
   },
 ];
 
