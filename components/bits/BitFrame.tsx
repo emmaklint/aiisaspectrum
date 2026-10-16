@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { method, type Bit } from "@/content/bits";
 import { examples } from "@/content/examples";
-import { ways } from "@/content/ways";
+import { capabilities } from "@/content/capabilities";
 
 /**
  * The shared frame around every bit: title and task on top, the bit in the
@@ -25,7 +25,7 @@ export function BitFrame({
   return (
     <main id="main" className={`mx-auto ${wide ? "max-w-5xl" : "max-w-3xl"} px-6 py-14 sm:px-8 sm:py-20`}>
       <p className="tag">
-        <Link href="/bits" className="no-underline hover:text-ink">Bits</Link> · {ways[bit.way].label}
+        <Link href="/bits" className="no-underline hover:text-ink">Bits</Link> · {capabilities[bit.capability].label}
       </p>
       <h1 className="mt-2 text-[2.6rem] leading-[0.95] text-balance sm:text-[3.6rem]">{bit.title}</h1>
       <p className="mt-5 max-w-[48ch] text-[1.1rem] leading-relaxed">{lede}</p>

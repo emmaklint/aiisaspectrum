@@ -1,27 +1,37 @@
+import type { Capability } from "./capabilities";
 import type { Way } from "./ways";
 
 /**
- * Inspirational bits: small, working things that let you feel one property
- * of AI interaction. A bit with `live: false` is listed as on its way.
- * A live bit needs a page at app/bits/<slug>/page.tsx.
+ * Inspirational bits: small, working things that each expose one thing AI
+ * can do (its capability) through a way of interacting that isn't a chat.
+ * A bit with `live: false` is listed as on its way. A live bit needs a page
+ * at app/bits/<slug>/page.tsx.
  */
 export type Bit = {
   slug: string;
   title: string;
-  /** The task, in one line. */
+  /** What you do, in one line. */
   task: string;
-  /** The two ways you try it. */
-  versus: [string, string];
+  capability: Capability;
+  /** How you interact. Links the bit to examples that work the same way. */
   way: Way;
   live: boolean;
 };
 
 export const bits: Bit[] = [
   {
+    slug: "the-task-you-keep-moving",
+    title: "The task you keep moving",
+    task: "Keep putting something off, and see who notices.",
+    capability: "notice",
+    way: "notice",
+    live: true,
+  },
+  {
     slug: "poster-playground",
     title: "Poster playground",
     task: "Make a poster yours. Talk to it, point at it, drag it around.",
-    versus: ["Talk", "Point, drag and adjust"],
+    capability: "transform",
     way: "mix",
     live: true,
   },
@@ -29,31 +39,31 @@ export const bits: Bit[] = [
     slug: "point-dont-describe",
     title: "Point, don't describe",
     task: "Fix one clunky sentence.",
-    versus: ["Describe which one", "Point at it"],
+    capability: "transform",
     way: "point",
     live: true,
   },
   {
-    slug: "ask-once-then-adjust",
-    title: "Ask once, then adjust",
-    task: "Get a bar in a chart to the right width.",
-    versus: ["Keep typing “a bit wider”", "Get a slider"],
-    way: "adjust",
+    slug: "think-out-loud",
+    title: "Think out loud",
+    task: "Ramble, and watch your thoughts land as clusters you can move.",
+    capability: "interpret",
+    way: "reshape",
     live: false,
   },
   {
-    slug: "every-morning",
-    title: "The same question every morning",
-    task: "Get the kids out the door five mornings in a row.",
-    versus: ["Ask every day", "Let the answer show up by the door"],
-    way: "ambient",
+    slug: "ten-options",
+    title: "Ten options, not one answer",
+    task: "Pick from a spread instead of asking again and again.",
+    capability: "generate",
+    way: "choose",
     live: false,
   },
   {
     slug: "step-in-halfway",
     title: "Step in halfway",
-    task: "Fix one wrong item in a plan the AI is making.",
-    versus: ["Explain it in chat", "Edit that item yourself"],
+    task: "Watch the AI work on a plan, and take over one part.",
+    capability: "act",
     way: "stepIn",
     live: false,
   },

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { bits } from "@/content/bits";
 import { bitsPage } from "@/content/copy";
-import { ways } from "@/content/ways";
+import { capabilities } from "@/content/capabilities";
 
 export const metadata: Metadata = { title: "Bits · AI is a spectrum" };
 
@@ -19,7 +19,7 @@ export default function BitsPage() {
           {bits.map((bit) => {
             const body = (
               <>
-                <span className="tag">{bit.live ? ways[bit.way].label : "On the way"}</span>
+                <span className="tag">{capabilities[bit.capability].label}{bit.live ? "" : " · On the way"}</span>
                 <span className="mt-3 font-display text-[1.6rem] font-bold leading-tight">{bit.title}</span>
                 <span className="mt-2 text-[0.98rem] leading-relaxed text-ink-muted">{bit.task}</span>
                 {bit.live && (

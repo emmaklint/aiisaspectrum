@@ -20,6 +20,7 @@ npm run lint    # tsc --noEmit
 | --- | --- |
 | `content/site.ts` | Title, description, author — and `essayUrl`, which every "Read the essay" link uses. Replace it in one place when the essay is live. |
 | `content/copy.ts` | All section prose, including the loose list of interaction modes. |
+| `content/capabilities.ts` | What AI can do, as a material: interpret, generate, transform, notice, act. Every bit exposes one. |
 | `content/ways.ts` | Ways of interacting. They tag the examples and tie each bit to them. |
 | `content/bits.ts` | The bits, live and on the way, plus the method note shown under each bit. |
 | `content/examples.ts` | The collection. Add an entry, tag it with `ways`, and a card appears. |

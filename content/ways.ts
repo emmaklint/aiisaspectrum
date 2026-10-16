@@ -24,6 +24,14 @@ export const ways = {
     label: "The tool takes shape",
     note: "The interface itself forms around what you are doing.",
   },
+  notice: {
+    label: "It notices",
+    note: "The AI reads the situation and speaks up when it matters.",
+  },
+  choose: {
+    label: "Pick from options",
+    note: "The AI makes possibilities, you choose.",
+  },
   ambient: {
     label: "No question needed",
     note: "The answer shows up where the decision happens.",

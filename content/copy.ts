@@ -4,13 +4,13 @@ export const home = {
   headline: "AI is a spectrum",
   belief:
     "Using AI doesn’t have to mean opening a chat and explaining what you want. Once we stop assuming it does, there are so many more possibilities.",
-  bits: { title: "Try a bit", body: "Do one small task two ways. Feel the difference." },
+  bits: { title: "Try a bit", body: "Small experiments. Feel what AI can do without a chat box." },
   examples: { title: "Browse examples", body: "What people are already building beyond the chat box." },
 };
 
 export const bitsPage = {
   heading: "Bits",
-  intro: "One small task, two ways to do it.",
+  intro: "Each bit shows one thing AI can do, without a chat box.",
 };
 
 export const examplesPage = {
