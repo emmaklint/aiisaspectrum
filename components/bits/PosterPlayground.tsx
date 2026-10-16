@@ -17,8 +17,8 @@ const habitLabels: Record<Habit, string> = {
   talked: "Talked",
   pointed: "Pointed",
   dragged: "Dragged",
-  adjusted: "Used a control",
-  tapped: "Tapped a button",
+  adjusted: "Used the AI's controls",
+  tapped: "Used the toolbar",
 };
 const habitNudge: Record<Habit, string> = {
   talked: "You mostly talked. Try clicking something first, then talking.",
@@ -306,7 +306,7 @@ export function PosterPlayground() {
 
           {offered.length > 0 && (
             <div className="space-y-3 rounded-xl border-[1.5px] border-dashed border-ink p-3">
-              <p className="tag">The AI made you these</p>
+              <p className="tag">Controls the AI made for you</p>
               {offered.map((o) => {
                 const el = poster.find((e) => e.id === o.id)!;
                 return o.kind === "slider" ? (
@@ -341,7 +341,7 @@ export function PosterPlayground() {
             <p className="tag tag-dark">How you played</p>
             <ul className="mt-3 space-y-1.5">
               {(Object.keys(habits) as Habit[]).map((h) => (
-                <li key={h} className="grid grid-cols-[8.5rem_1fr_1.5rem] items-center gap-2 text-[0.85rem]">
+                <li key={h} className="grid grid-cols-[10.5rem_1fr_1.5rem] items-center gap-2 text-[0.85rem]">
                   <span>{habitLabels[h]}</span>
                   <span className="h-2.5 overflow-hidden rounded-full bg-paper">
                     <span className="block h-full rounded-full bg-crayon transition-[width]" style={{ width: `${(habits[h] / maxHabit) * 100}%` }} />

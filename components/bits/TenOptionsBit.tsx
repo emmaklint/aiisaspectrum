@@ -126,7 +126,7 @@ export function TenOptionsBit() {
               value={draft}
               onChange={setDraft}
               onSend={send}
-              placeholder={lastOffer ? "Another? More playful? Or “yes”…" : "Yes please"}
+              placeholder={lastOffer ? "Ask for another, a style, or say yes" : "Ask for a headline"}
             />
           </div>
           {asks >= 5 && !chosen && (
@@ -167,7 +167,7 @@ export function TenOptionsBit() {
               </li>
             ))}
           </ul>
-          <QuietButton onClick={shuffle}>Show ten others</QuietButton>
+          <QuietButton onClick={shuffle}>Show ten new ones</QuietButton>
         </div>
       )}
 

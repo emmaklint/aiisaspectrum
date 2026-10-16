@@ -234,7 +234,7 @@ export function PointBit() {
               id="describe-input"
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
-              placeholder="Message"
+              placeholder="Tell the AI what to change"
               aria-label="Message to the AI"
               className="min-w-0 flex-1 rounded-full border-[1.5px] border-ink/30 bg-paper px-4 py-2.5 text-[1rem] focus:border-ink"
             />
@@ -273,7 +273,7 @@ export function PointBit() {
               id="point-input"
               value={pointDraft}
               onChange={(e) => setPointDraft(e.target.value)}
-              placeholder="Or type"
+              placeholder="Or say what feels off"
               aria-label="What feels off"
               className="min-w-0 flex-1 rounded-full border-[1.5px] border-ink/30 bg-blush px-4 py-2 text-[1rem] focus:border-ink"
             />

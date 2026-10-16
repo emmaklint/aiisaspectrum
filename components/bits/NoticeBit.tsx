@@ -223,7 +223,7 @@ export function NoticeBit() {
                       disabled={t.day === 5}
                       className="self-start rounded-full border border-ink/30 px-2.5 py-0.5 text-[0.8rem] text-ink-muted hover:border-ink hover:text-ink disabled:opacity-40"
                     >
-                      Later →
+                      Postpone →
                     </button>
                   )}
                 </article>
@@ -270,7 +270,7 @@ export function NoticeBit() {
         <p className="text-[0.9rem] text-ink-quiet" aria-live="polite">
           {tasks.some((t) => noticing(t))
             ? "The planner noticed. Nobody asked it to."
-            : "Drag a task, or press Later. In real life it might take six times. Here, three."}
+            : "Drag a task to another day, or press Postpone."}
         </p>
       )}
 

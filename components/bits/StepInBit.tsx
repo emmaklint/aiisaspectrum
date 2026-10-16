@@ -145,7 +145,7 @@ export function StepInBit() {
               value={draft}
               onChange={setDraft}
               onSend={send}
-              placeholder={chatItems.length ? "Remove the…, add…" : "Describe your trip"}
+              placeholder={chatItems.length ? "Ask to remove or add something" : "Describe your trip"}
             />
           </div>
           {chatItems.length > 0 && (
@@ -204,7 +204,7 @@ export function StepInBit() {
                 {!finished && (
                   <div className="flex flex-wrap gap-2">
                     <button type="button" onClick={() => setRunning((r) => !r)} className="rounded-full border-[1.5px] border-ink px-4 py-1.5 text-[0.85rem] font-medium">
-                      {running ? "Pause" : "Keep going"}
+                      {running ? "Pause" : "Resume"}
                     </button>
                     <button
                       type="button"
@@ -215,7 +215,7 @@ export function StepInBit() {
                       }}
                       className="rounded-full border-[1.5px] border-ink/30 px-4 py-1.5 text-[0.85rem] text-ink-muted hover:border-ink hover:text-ink"
                     >
-                      Take over
+                      Stop and take over
                     </button>
                   </div>
                 )}
@@ -233,7 +233,7 @@ export function StepInBit() {
                   <li key={i.id} className="flex items-center justify-between gap-2 rounded-lg bg-blush px-3 py-1.5 text-[0.9rem]">
                     <span>
                       {i.name}
-                      {i.byYou && <span className="tag ml-2">You</span>}
+                      {i.byYou && <span className="tag ml-2">Added by you</span>}
                     </span>
                     <button type="button" onClick={() => remove(i)} aria-label={`Take out ${i.name}`} className="text-ink-quiet hover:text-ink">
                       ✕
