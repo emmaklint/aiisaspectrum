@@ -112,7 +112,7 @@ export function ThinkOutLoudBit() {
         />
         <div className="flex flex-wrap items-center gap-2">
           <button type="button" onClick={letItOut} className="rounded-full bg-crayon px-5 py-2 font-medium">
-            {round ? "Add to it" : "Let it out"}
+            {round ? "Add more" : mode === "chat" ? "Send to the AI" : "Sort my thoughts"}
           </button>
           {canSpeak && (
             <button
