@@ -82,3 +82,21 @@
 .tag-dark {
   color: var(--color-ink);
 }
+
+/* Home heading: a soft wash of the palette that fades into the page, and a
+   fine grain on top so it reads like paper rather than a screen gradient. */
+.hero-wash {
+  background:
+    linear-gradient(to bottom, transparent 55%, var(--color-blush) 100%),
+    radial-gradient(60% 70% at 18% 20%, rgba(242, 140, 134, 0.42), transparent 70%),
+    radial-gradient(55% 65% at 85% 35%, rgba(224, 96, 47, 0.16), transparent 70%),
+    radial-gradient(70% 70% at 60% 95%, rgba(152, 165, 90, 0.22), transparent 70%),
+    var(--color-blush);
+}
+.hero-grain {
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.14 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  mask-image: linear-gradient(to bottom, #000 60%, transparent);
+}

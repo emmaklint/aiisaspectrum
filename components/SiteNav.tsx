@@ -26,7 +26,7 @@ export function SiteNav() {
   const home = path === "/";
 
   return (
-    <nav aria-label="Site" className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-6 pt-5 sm:px-8">
+    <nav aria-label="Site" className="relative z-10 mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-6 pt-5 sm:px-8">
       <Link
         href="/"
         aria-label="AI is a spectrum, home"
