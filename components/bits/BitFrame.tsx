@@ -30,7 +30,10 @@ export function BitFrame({
       >
         <span aria-hidden="true">←</span> All bits
       </Link>
-      <p className="tag mt-6">{capabilities[bit.capability].label}</p>
+      <p className="mt-6 text-[0.92rem]">
+        <span className="tag tag-dark mr-2">{capabilities[bit.capability].label}</span>
+        <span className="text-ink-muted">{capabilities[bit.capability].note}</span>
+      </p>
       <h1 className="mt-2 text-[2.6rem] leading-[0.95] text-balance sm:text-[3.6rem]">{bit.title}</h1>
       <p className="mt-5 max-w-[48ch] text-[1.1rem] leading-relaxed">{lede}</p>
 

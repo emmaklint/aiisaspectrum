@@ -10,7 +10,7 @@ export const home = {
 
 export const bitsPage = {
   heading: "Bits",
-  intro: "Each bit shows one thing AI can do, without a chat box.",
+  intro: "Five things AI can do, each tried without a chat box.",
 };
 
 export const examplesPage = {
