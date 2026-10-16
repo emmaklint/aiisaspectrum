@@ -4,6 +4,10 @@
  * ways it uses. A loose set, not a taxonomy. Add to it freely.
  */
 export const ways = {
+  mix: {
+    label: "Mix and match",
+    note: "Talk, point, drag and adjust, all on the same thing.",
+  },
   point: {
     label: "Point at it",
     note: "Show the AI where, instead of describing it.",

@@ -18,6 +18,14 @@ export type Bit = {
 
 export const bits: Bit[] = [
   {
+    slug: "poster-playground",
+    title: "Poster playground",
+    task: "Make a poster yours. Talk to it, point at it, drag it around.",
+    versus: ["Talk", "Point, drag and adjust"],
+    way: "mix",
+    live: true,
+  },
+  {
     slug: "point-dont-describe",
     title: "Point, don't describe",
     task: "Fix one clunky sentence.",
@@ -55,5 +63,5 @@ export const bits: Bit[] = [
 export const method = {
   short:
     "An inspirational bit is a small, working thing that lets you feel one property of a technology instead of reading about it (Sundström et al. 2011, Klint 2018).",
-  noAi: "There’s no real AI here. The replies are prewritten, so the only thing that changes is how you interact.",
+  noAi: "There’s no real AI here yet. The replies follow simple rules, so the only thing that changes is how you interact.",
 };

@@ -11,16 +11,19 @@ import { ways } from "@/content/ways";
 export function BitFrame({
   bit,
   lede,
+  wide = false,
   children,
 }: {
   bit: Bit;
   lede: string;
+  /** Use the full page width, for bits that need room side by side. */
+  wide?: boolean;
   children: React.ReactNode;
 }) {
   const related = examples.filter((e) => e.ways.includes(bit.way));
 
   return (
-    <main id="main" className="mx-auto max-w-3xl px-6 py-14 sm:px-8 sm:py-20">
+    <main id="main" className={`mx-auto ${wide ? "max-w-5xl" : "max-w-3xl"} px-6 py-14 sm:px-8 sm:py-20`}>
       <p className="tag">
         <Link href="/bits" className="no-underline hover:text-ink">Bits</Link> · {ways[bit.way].label}
       </p>
