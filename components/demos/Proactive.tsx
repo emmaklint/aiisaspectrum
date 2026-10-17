@@ -8,7 +8,7 @@ export function Proactive() {
   return (
     <div className="mx-auto w-full max-w-sm">
       <div className="overflow-hidden rounded-xl border-[1.5px] border-ink bg-paper">
-        <div className="bg-crayon px-5 py-3">
+        <div className="bg-warm px-5 py-3">
           <p className="tag tag-dark">This morning</p>
           <p className="mt-0.5 font-display text-[1.3rem] font-bold leading-tight text-ink">
             9°C, rain after 14:00
@@ -32,7 +32,7 @@ export function Proactive() {
 
         <div className="flex items-center justify-between border-t border-rule px-5 py-3">
           <span className="tag">Ready before you woke up</span>
-          <span className="text-[0.82rem] underline decoration-crayon decoration-2 underline-offset-4">
+          <span className="text-[0.82rem] text-link underline decoration-2 underline-offset-4">
             Change
           </span>
         </div>

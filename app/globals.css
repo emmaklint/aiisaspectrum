@@ -1,22 +1,39 @@
 @import "tailwindcss";
 
-/* Type and colour come straight from emmaklint.com: Bricolage Grotesque for
-   display, Azeret Mono for the small labels, system sans for reading, and
-   the crayon palette — saturated blocks of colour rather than washes. */
+/* AI is a Spectrum design system: one warm spectrum, pink to peach to
+   burnt orange, on a calm off-white ground with off-black text. Off-black
+   passes AA on every spectrum stop, so text on colour is always ink. */
 @theme {
-  --color-blush: #f7e7e2; /* page ground */
-  --color-paper: #fdf7f4; /* cards */
-  --color-wall: #eec4be;
-  --color-olive: #98a55a;
-  --color-moss: #5e6b2a;
-  --color-crayon: #e0602f;
-  --color-crayon-pink: #f28c86;
+  /* ground and text */
+  --color-ground: #fff8f3; /* page */
+  --color-surface: #fffdfb; /* cards, panels */
+  --color-ink: #1f1a17; /* all text, control borders (16:1) */
+  --color-ink-muted: #5c524d; /* secondary text, labels (6:1+ on every ground) */
+  --color-rule: #e9d9cf; /* decorative dividers only */
+  --color-link: #8c3410;
 
-  --color-ink: #231815;
-  --color-ink-muted: rgba(35, 24, 21, 0.78);
-  --color-ink-quiet: rgba(35, 24, 21, 0.6);
-  --color-ink-faint: rgba(35, 24, 21, 0.45);
-  --color-rule: rgba(35, 24, 21, 0.14);
+  /* the spectrum, always in this order */
+  --color-spectrum-pink: #f4a7bb;
+  --color-spectrum-rose: #f6ae9e;
+  --color-spectrum-peach: #f9be8c;
+  --color-spectrum-apricot: #f39a5b;
+  --color-spectrum-burnt: #d2652a; /* text on it: 16px+, weight 500+ */
+
+  /* quiet tints for section backgrounds */
+  --color-tint-pink: #fdecf0;
+  --color-tint-peach: #fef0e3;
+  --color-tint-orange: #fbe3d4;
+
+  /* older names, kept so existing components keep working */
+  --color-blush: #fff8f3;
+  --color-paper: #fffdfb;
+  --color-wall: #fef0e3;
+  --color-olive: #f9be8c;
+  --color-moss: #8c3410;
+  --color-crayon: #d2652a;
+  --color-crayon-pink: #f4a7bb;
+  --color-ink-quiet: #5c524d;
+  --color-ink-faint: #5c524d;
 
   --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-sans:
@@ -25,13 +42,26 @@
   --font-mono: "Azeret Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
+:root {
+  --gradient-spectrum: linear-gradient(
+    90deg,
+    #f4a7bb 0%,
+    #f6ae9e 25%,
+    #f9be8c 50%,
+    #f39a5b 75%,
+    #d2652a 100%
+  );
+  --gradient-warm: linear-gradient(90deg, #f9be8c 0%, #f39a5b 50%, #d2652a 100%);
+  --gradient-soft: linear-gradient(90deg, #fdecf0 0%, #fef0e3 50%, #fbe3d4 100%);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    background: var(--color-blush);
+    background: var(--color-ground);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -68,14 +98,15 @@
 
 /* ---- small shared pieces ------------------------------------------- */
 
-/* The eyebrow labels: mono, small, spaced. */
+/* The eyebrow labels: mono, spaced, never below 12px, never faint. */
 .tag {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-ink-faint);
+  color: var(--color-ink-muted);
 }
 
 /* on the saturated blocks the faint grey disappears */
@@ -96,4 +127,15 @@
 }
 .panel-enter {
   animation: panel-in 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Gradient surfaces. Always left to right, pink to burnt orange. */
+.bg-spectrum {
+  background: var(--gradient-spectrum);
+}
+.bg-warm {
+  background: var(--gradient-warm);
+}
+.bg-soft {
+  background: var(--gradient-soft);
 }

@@ -19,7 +19,7 @@ const offsets = [
 
 export function Modes() {
   return (
-    <section className="bg-wall">
+    <section className="bg-soft">
       <div className="mx-auto max-w-5xl px-6 py-20 sm:px-8 sm:py-24">
         <SectionHeading number={modes.number}>{modes.heading}</SectionHeading>
 
@@ -31,14 +31,14 @@ export function Modes() {
           {modes.list.map((mode, i) => (
             <li
               key={mode}
-              className={`rounded-full border-[1.5px] border-ink bg-blush px-5 py-2.5 font-display text-[1.05rem] font-semibold sm:text-[1.2rem] ${offsets[i % offsets.length]}`}
+              className={`rounded-full border-[1.5px] border-ink bg-surface px-5 py-2.5 font-display text-[1.05rem] font-semibold sm:text-[1.2rem] ${offsets[i % offsets.length]}`}
             >
               {mode}
             </li>
           ))}
         </ul>
 
-        <p className="mt-14 text-[0.85rem] text-ink-muted">
+        <p className="mt-14 text-[0.9rem] text-ink-muted">
           Not a list of all of them. Just the ones that came to mind.
         </p>
       </div>

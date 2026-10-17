@@ -31,8 +31,8 @@ export function Context() {
                   className={[
                     "mt-1 grid h-16 w-16 place-items-center rounded-lg p-2 transition-colors",
                     item.surfaced
-                      ? "bg-olive/35 text-ink"
-                      : "text-ink/25",
+                      ? "bg-spectrum-peach text-ink"
+                      : "text-ink/40",
                   ].join(" ")}
                 >
                   {(() => {

@@ -8,6 +8,14 @@ import { Choose } from "./demos/Choose";
 import { Context } from "./demos/Context";
 import { Proactive } from "./demos/Proactive";
 
+/** Each tab sits at its own stop on the spectrum, left to right. */
+const stops = [
+  "bg-spectrum-pink",
+  "bg-spectrum-peach",
+  "bg-spectrum-apricot",
+  "bg-spectrum-burnt",
+];
+
 const panels = {
   ask: Ask,
   choose: Choose,
@@ -59,7 +67,7 @@ export function SpectrumDemo() {
         role="tablist"
         aria-label="Four ways to interact"
         onKeyDown={onKeyDown}
-        className="mt-6 grid grid-cols-2 border-[1.5px] border-ink sm:grid-cols-4"
+        className="mt-6 grid grid-cols-2 overflow-hidden rounded-xl border-[1.5px] border-ink sm:grid-cols-4"
       >
         {interactions.map((interaction, index) => {
           const selected = index === active;
@@ -76,26 +84,31 @@ export function SpectrumDemo() {
               tabIndex={selected ? 0 : -1}
               onClick={() => setActive(index)}
               className={[
-                "border-ink p-3 text-left transition-colors",
+                "min-h-16 border-ink p-3 text-left text-ink transition-colors",
                 // interior rules only, so the group reads as one object
                 index % 2 === 1 ? "border-l-[1.5px]" : "",
                 index < 2 ? "border-b-[1.5px] sm:border-b-0" : "",
                 "sm:border-l-[1.5px] sm:first:border-l-0",
                 selected
-                  ? "bg-ink text-blush"
-                  : "bg-paper/60 hover:bg-paper",
+                  ? stops[index % stops.length]
+                  : "bg-surface hover:bg-tint-peach",
               ].join(" ")}
             >
               <span
                 className={[
-                  "block font-mono text-[0.62rem] uppercase tracking-[0.1em]",
-                  selected ? "text-blush/70" : "text-ink-faint",
+                  "block font-mono text-[0.75rem] font-medium uppercase tracking-[0.08em]",
+                  selected ? "text-ink" : "text-ink-muted",
                 ].join(" ")}
               >
                 {interaction.label}
               </span>
-              <span className="mt-1 block font-display text-[1.05rem] font-semibold leading-tight">
+              <span className="mt-1 block font-display text-[1.15rem] font-semibold leading-tight">
                 {interaction.verb}
+                {selected && (
+                  <span aria-hidden="true" className="ml-1.5 align-middle text-[0.6rem]">
+                    ●
+                  </span>
+                )}
               </span>
             </button>
           );
@@ -112,13 +125,13 @@ export function SpectrumDemo() {
         <p className="text-[0.95rem] text-ink-muted">{current.note}</p>
         <div
           key={current.id}
-          className="panel-enter mt-5 flex min-h-[20rem] items-center justify-center rounded-2xl border border-rule bg-wall/35 p-5 sm:p-8"
+          className="panel-enter mt-5 flex min-h-[20rem] items-center justify-center rounded-2xl border border-rule bg-soft p-5 sm:p-8"
         >
           <Panel />
         </div>
       </div>
 
-      <p className="mt-6 border-t border-ink pt-4 font-display text-[1.05rem] font-semibold sm:text-[1.2rem]">
+      <p className="mt-6 border-t-[1.5px] border-ink pt-4 font-display text-[1.05rem] font-semibold sm:text-[1.2rem]">
         {demo.footnote}
       </p>
     </div>
