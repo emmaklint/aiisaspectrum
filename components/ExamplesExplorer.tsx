@@ -49,7 +49,7 @@ export function ExamplesExplorer({
       (e) =>
         (!way || e.ways.includes(way)) &&
         (kind === "All" || e.kind === kind) &&
-        (!q || `${e.name} ${e.idea}`.toLowerCase().includes(q)),
+        (!q || `${e.name} ${e.gist} ${e.idea}`.toLowerCase().includes(q)),
     );
     return [...list].sort((a, b) =>
       sort === "way"
@@ -73,7 +73,7 @@ export function ExamplesExplorer({
     } catch {}
   }
 
-  const grid = "grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-[minmax(10rem,14rem)_5.5rem_repeat(var(--cols),minmax(0,1fr))]";
+  const grid = "grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-[minmax(0,1fr)_4.75rem_repeat(var(--cols),3.4rem)]";
   const style = { "--cols": cols.length } as React.CSSProperties;
   const bit = (w: Way) => liveBits.find((b) => b.way === w);
 
@@ -185,11 +185,14 @@ export function ExamplesExplorer({
                   className={`${grid} w-full items-center text-left transition-colors hover:bg-wall/40 ${isOpen ? "bg-wall/40" : ""}`}
                   style={style}
                 >
-                  <span className="flex min-w-0 items-center gap-2 px-4 py-2.5">
+                  <span className="flex min-w-0 items-baseline gap-2 px-4 py-2.5">
                     <span aria-hidden="true" className={`text-[0.7rem] text-ink-quiet transition-transform ${isOpen ? "rotate-90" : ""}`}>▶</span>
-                    <span className="truncate font-display text-[1.02rem] font-bold">{e.name}</span>
+                    <span className="min-w-0">
+                      <span className="block font-display text-[1.02rem] font-bold leading-tight">{e.name}</span>
+                      <span className="block text-[0.86rem] leading-snug text-ink-muted">{e.gist}</span>
+                    </span>
                   </span>
-                  <span className="px-2 text-right text-[0.78rem] text-ink-muted md:text-left">
+                  <span className="self-start px-2 pt-3 text-right text-[0.78rem] text-ink-muted md:self-center md:pt-0 md:text-left">
                     {e.kind}
                   </span>
                   {cols.map((w) => (

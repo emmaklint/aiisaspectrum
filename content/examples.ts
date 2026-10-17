@@ -7,6 +7,8 @@ import type { Way } from "./ways";
  */
 export type Example = {
   name: string;
+  /** A few words for the overview row: what you do with it. */
+  gist: string;
   /** One sentence on the interaction idea, not on the product. */
   idea: string;
   kind: "Product" | "Research" | "Idea";
@@ -17,6 +19,7 @@ export type Example = {
 export const examples: Example[] = [
   {
     name: "Moonjar",
+    gist: "Click the screenshot where you want a change",
     idea: "Instead of a chat beside the work, you click on part of a generated product screenshot and ask for changes right there.",
     kind: "Product",
     ways: ["point"],
@@ -24,6 +27,7 @@ export const examples: Example[] = [
   },
   {
     name: "DynaVis",
+    gist: "Ask for a change, get a slider instead",
     idea: "Ask for a change to a chart and get a control, like a slider, so you can stop explaining and adjust it yourself.",
     kind: "Research",
     ways: ["adjust"],
@@ -31,6 +35,7 @@ export const examples: Example[] = [
   },
   {
     name: "Misty",
+    gist: "Drag parts of one design onto another",
     idea: "Drag part of one interface design onto another to show which qualities you want carried across.",
     kind: "Research",
     ways: ["demonstrate", "point"],
@@ -38,6 +43,7 @@ export const examples: Example[] = [
   },
   {
     name: "Jelly",
+    gist: "A small tool that shapes itself around your task",
     idea: "Describe what you are trying to do, and a small tool takes shape around the task and keeps changing as it does.",
     kind: "Research",
     ways: ["reshape"],
@@ -45,6 +51,7 @@ export const examples: Example[] = [
   },
   {
     name: "Orality",
+    gist: "Ramble, and thoughts land as clusters you can move",
     idea: "Think out loud, and your thoughts land as clusters on a canvas you can rearrange by hand or by voice, instead of in a growing chat thread.",
     kind: "Research",
     ways: ["reshape", "stepIn"],
@@ -52,6 +59,7 @@ export const examples: Example[] = [
   },
   {
     name: "Textoshop",
+    gist: "Edit text with drawing-app tools",
     idea: "Text can be edited with drawing-software tools: a tone brush, a smudge tool, layers, and boolean operations to merge passages.",
     kind: "Research",
     ways: ["point", "adjust"],
@@ -59,6 +67,7 @@ export const examples: Example[] = [
   },
   {
     name: "Toyteller",
+    gist: "Move characters like toys to steer a story",
     idea: "Moving characters around like toys can steer a story, which helps express intentions that are hard to put into words.",
     kind: "Research",
     ways: ["demonstrate"],
@@ -66,6 +75,7 @@ export const examples: Example[] = [
   },
   {
     name: "Code Shaping",
+    gist: "Sketch on top of code to change it",
     idea: "Programmers can sketch arrows and rough charts directly on top of their code, and the AI turns the sketch into code changes.",
     kind: "Research",
     ways: ["demonstrate", "point"],
@@ -73,6 +83,7 @@ export const examples: Example[] = [
   },
   {
     name: "DirectGPT",
+    gist: "Select the thing instead of describing it",
     idea: "Selecting the object you mean, instead of describing where it is, makes edits to text, code and images faster and needs shorter prompts.",
     kind: "Research",
     ways: ["point"],
@@ -80,6 +91,7 @@ export const examples: Example[] = [
   },
   {
     name: "Circle to Search",
+    gist: "Circle something on screen to ask about it",
     idea: "Circling, highlighting or tapping something on screen is the whole question, without leaving the app.",
     kind: "Product",
     ways: ["point"],
@@ -87,6 +99,7 @@ export const examples: Example[] = [
   },
   {
     name: "Clean Up",
+    gist: "Brush over an object to remove it from a photo",
     idea: "Tapping or brushing over an object removes it from a photo, and the AI can highlight things you might want gone.",
     kind: "Product",
     ways: ["point", "notice"],
@@ -94,6 +107,7 @@ export const examples: Example[] = [
   },
   {
     name: "Descript",
+    gist: "Edit video by editing the transcript",
     idea: "Video and audio can be edited by editing the transcript: delete a word and it disappears from the recording.",
     kind: "Product",
     ways: ["reshape"],
@@ -101,6 +115,7 @@ export const examples: Example[] = [
   },
   {
     name: "Math Notes",
+    gist: "Handwritten maths that answers in your handwriting",
     idea: "A handwritten equation gets its answer in your own handwriting, and tapping a number turns it into a slider.",
     kind: "Product",
     ways: ["adjust", "ambient"],
@@ -108,6 +123,7 @@ export const examples: Example[] = [
   },
   {
     name: "Session Players",
+    gist: "An AI bandmate you steer with sliders",
     idea: "An AI musician plays along with your song, and you steer its performance with complexity and intensity sliders.",
     kind: "Product",
     ways: ["adjust"],
@@ -115,6 +131,7 @@ export const examples: Example[] = [
   },
   {
     name: "PromptPaint",
+    gist: "Mix prompts like paint on a canvas",
     idea: "Prompts can be mixed like paint and applied to different parts of a canvas, the way you layer colors.",
     kind: "Research",
     ways: ["adjust", "point"],
@@ -122,6 +139,7 @@ export const examples: Example[] = [
   },
   {
     name: "Krea Realtime",
+    gist: "The image updates as you draw",
     idea: "The image updates live as you draw and move things on a canvas, with no send button.",
     kind: "Product",
     ways: ["demonstrate", "adjust"],
@@ -129,6 +147,7 @@ export const examples: Example[] = [
   },
   {
     name: "Patchview",
+    gist: "Drag story ideas toward the concepts they belong to",
     idea: "Generated story elements are pulled toward concepts like magnets, and you correct the AI by dragging things where they belong.",
     kind: "Research",
     ways: ["point", "demonstrate"],
@@ -136,6 +155,7 @@ export const examples: Example[] = [
   },
   {
     name: "Best Take",
+    gist: "Tap each face to pick the best expression",
     idea: "In a group photo you tap each face and pick the expression you like, and the AI merges your choices.",
     kind: "Product",
     ways: ["choose", "point"],
@@ -143,6 +163,7 @@ export const examples: Example[] = [
   },
   {
     name: "Luminate",
+    gist: "A map of many answers to explore",
     idea: "The AI lays out many responses along dimensions it generates, so you explore a space of options instead of asking one question at a time.",
     kind: "Research",
     ways: ["choose"],
@@ -150,6 +171,7 @@ export const examples: Example[] = [
   },
   {
     name: "WaitGPT",
+    gist: "Watch the analysis step by step, fix one step",
     idea: "While an AI analyzes data, each step shows up visually so you can check and change a single step without starting over.",
     kind: "Research",
     ways: ["stepIn"],
@@ -157,6 +179,7 @@ export const examples: Example[] = [
   },
   {
     name: "Satori",
+    gist: "AR help that offers itself mid-task",
     idea: "During a physical task in AR, the assistant offers help on its own, based on what you seem to know and what is around you.",
     kind: "Research",
     ways: ["notice"],
@@ -164,6 +187,7 @@ export const examples: Example[] = [
   },
   {
     name: "Magic Cue",
+    gist: "The answer shows up right where you reply",
     idea: "When someone asks for an address in a message, the answer appears as a suggestion right where you reply.",
     kind: "Product",
     ways: ["ambient", "notice"],
@@ -171,6 +195,7 @@ export const examples: Example[] = [
   },
   {
     name: "Endel",
+    gist: "Sound that adapts to you, no talking",
     idea: "Sound keeps adapting to the time of day, weather and heart rate, and you never talk to it.",
     kind: "Product",
     ways: ["ambient"],
@@ -178,6 +203,7 @@ export const examples: Example[] = [
   },
   {
     name: "mymind",
+    gist: "Saved things sort themselves, no folders",
     idea: "Everything you save gets sorted and tagged for you, so there are no folders and you find things by what you remember.",
     kind: "Product",
     ways: ["ambient", "notice"],
