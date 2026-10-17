@@ -206,8 +206,8 @@ export function ExamplesExplorer({
                   </span>
                 </button>
                 {isOpen && (
-                  <div className="space-y-3 bg-wall/40 px-4 pb-4 pl-10 md:max-w-[48rem]">
-                    <p className="text-[0.95rem] leading-relaxed">{e.idea}</p>
+                  <div className="space-y-3 bg-wall/40 px-4 pb-4 pl-10">
+                    <p className="max-w-[62ch] text-[0.95rem] leading-relaxed">{e.idea}</p>
                     <p className="flex flex-wrap gap-x-5 gap-y-1 text-[0.88rem] font-medium">
                       <a href={e.href} target="_blank" rel="noreferrer" className="underline decoration-crayon decoration-2 underline-offset-4">
                         {new URL(e.href).hostname.replace(/^www\./, "")} ↗
