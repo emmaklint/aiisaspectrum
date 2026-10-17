@@ -9,16 +9,9 @@ const links = [
   { href: "/examples", label: "In the wild" },
 ];
 
-/** The spectrum itself, as the site's mark: the crayon colours side by side. */
+/** The spectrum itself, as the site's mark: pink to burnt orange. */
 export function SpectrumMark({ className = "" }: { className?: string }) {
-  return (
-    <span aria-hidden="true" className={`inline-flex overflow-hidden rounded-[3px] ${className}`}>
-      <span className="w-[0.5em] bg-crayon" />
-      <span className="w-[0.5em] bg-crayon-pink" />
-      <span className="w-[0.5em] bg-olive" />
-      <span className="w-[0.5em] bg-moss" />
-    </span>
-  );
+  return <span aria-hidden="true" className={`bg-spectrum inline-block w-[2em] rounded-[3px] ${className}`} />;
 }
 
 export function SiteNav() {
@@ -30,7 +23,7 @@ export function SiteNav() {
       <Link
         href="/"
         aria-label="AI is a spectrum, home"
-        className={`flex items-center gap-2 font-display text-[1.05rem] font-bold tracking-tight no-underline ${home ? "invisible" : ""}`}
+        className={`flex items-center gap-2 font-display text-[1.05rem] font-bold tracking-tight no-underline ${home ? "invisible max-sm:hidden" : ""}`}
       >
         <SpectrumMark className="h-[1.1em]" />
         {site.title}
@@ -43,7 +36,7 @@ export function SiteNav() {
               <Link
                 href={link.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-full px-3.5 py-1.5 font-medium no-underline transition-colors ${
+                className={`inline-flex min-h-11 items-center rounded-full px-4 py-1.5 font-medium no-underline transition-colors ${
                   active ? "bg-ink text-blush" : "text-ink hover:bg-wall"
                 }`}
               >
@@ -53,7 +46,7 @@ export function SiteNav() {
           );
         })}
         <li>
-          <a href={site.essayUrl} className="rounded-full px-3.5 py-1.5 text-ink-muted no-underline hover:bg-wall hover:text-ink">
+          <a href={site.essayUrl} className="inline-flex min-h-11 items-center rounded-full px-4 py-1.5 text-ink-muted no-underline hover:bg-wall hover:text-ink">
             Essay ↗
           </a>
         </li>

@@ -195,9 +195,9 @@ export function PosterPlayground() {
                     top: `${el.y}%`,
                     fontSize: `${el.size}cqw`,
                     transform: `translate(-50%, -50%)${el.id === "badge" ? " rotate(-8deg)" : ""}`,
-                    color: el.id === "badge" ? "#231815" : el.color,
+                    color: el.id === "badge" ? "#1f1a17" : el.color,
                     background: el.id === "badge" ? el.color : undefined,
-                    outline: selected === el.id ? "2px dashed #231815" : undefined,
+                    outline: selected === el.id ? "2px dashed #1f1a17" : undefined,
                     outlineOffset: "0.25em",
                   }}
                 >
@@ -324,7 +324,7 @@ export function PosterPlayground() {
                       onKeyDown={() => snapshot()}
                       onKeyUp={() => bump("adjusted")}
                       onChange={(e) => update(o.id, { size: Number(e.target.value) })}
-                      className="mt-1 block w-full accent-[#e0602f]"
+                      className="mt-1 block w-full accent-[#d2652a]"
                     />
                   </label>
                 ) : (

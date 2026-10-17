@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 /** The shared footer, which is also the About section (#about). */
 export function SiteFooter() {
-  const link = "text-ink underline decoration-crayon decoration-2 underline-offset-4";
+  const link = "text-link underline decoration-2 underline-offset-4";
   return (
     <footer id="about" className="mt-8 bg-wall/60 scroll-mt-4">
       <div className="mx-auto grid max-w-5xl gap-10 px-6 py-14 sm:px-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">

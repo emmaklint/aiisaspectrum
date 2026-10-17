@@ -184,7 +184,7 @@ export function PointBit() {
         ))}
       </div>
 
-      <div className="rounded-md border border-rule bg-paper px-5 py-6 text-[1.2rem] leading-[1.65] shadow-[0_18px_40px_-28px_rgba(35,24,21,0.35)] sm:px-7 sm:text-[1.3rem]" aria-live="polite">
+      <div className="rounded-md border border-rule bg-paper px-5 py-6 text-[1.2rem] leading-[1.65] shadow-[0_18px_40px_-28px_rgba(31,26,23,21,0.35)] sm:px-7 sm:text-[1.3rem]" aria-live="polite">
         <p>
           {docs[mode].map((text, i) => {
             const changed = text !== SENTENCES[i].text;

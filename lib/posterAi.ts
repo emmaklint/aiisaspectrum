@@ -29,19 +29,19 @@ export const names: Record<ElId, string> = {
 };
 
 export const palette: { name: string; value: string }[] = [
-  { name: "black", value: "#231815" },
-  { name: "orange", value: "#e0602f" },
-  { name: "pink", value: "#f28c86" },
-  { name: "green", value: "#98a55a" },
-  { name: "dark green", value: "#5e6b2a" },
-  { name: "white", value: "#fdf7f4" },
+  { name: "black", value: "#1f1a17" },
+  { name: "orange", value: "#d2652a" },
+  { name: "pink", value: "#f4a7bb" },
+  { name: "peach", value: "#f9be8c" },
+  { name: "apricot", value: "#f39a5b" },
+  { name: "white", value: "#fffdfb" },
 ];
 
 export const startingPoster = (): El[] => [
-  { id: "title", text: "Clothes swap", x: 50, y: 30, size: 13, color: "#231815", hidden: false },
-  { id: "sub", text: "Kids' sizes 80–140", x: 50, y: 48, size: 5, color: "#231815", hidden: false },
-  { id: "date", text: "Saturday 10–14", x: 50, y: 60, size: 5.5, color: "#231815", hidden: false },
-  { id: "badge", text: "Free!", x: 76, y: 80, size: 6, color: "#e0602f", hidden: false },
+  { id: "title", text: "Clothes swap", x: 50, y: 30, size: 13, color: "#1f1a17", hidden: false },
+  { id: "sub", text: "Kids' sizes 80–140", x: 50, y: 48, size: 5, color: "#1f1a17", hidden: false },
+  { id: "date", text: "Saturday 10–14", x: 50, y: 60, size: 5.5, color: "#1f1a17", hidden: false },
+  { id: "badge", text: "Free!", x: 76, y: 80, size: 6, color: "#d2652a", hidden: false },
 ];
 
 export type Action =
@@ -100,7 +100,7 @@ export function parseAction(msg: string): Action | null {
     if (t.includes(c.name)) return { kind: "color", value: c.value };
   }
   if (/\b(red)\b/.test(t)) return { kind: "color", value: palette[1].value };
-  if (/\b(olive)\b/.test(t)) return { kind: "color", value: palette[3].value };
+  if (/\b(yellow|beige)\b/.test(t)) return { kind: "color", value: palette[3].value };
   if (/\b(colou?r|blue|yellow|purple)\b/.test(t)) return { kind: "color", value: "" };
 
   const step = small ? 4 : 12;
