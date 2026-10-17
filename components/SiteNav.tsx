@@ -9,13 +9,9 @@ const links = [
   { href: "/examples", label: "In the wild" },
 ];
 
-/**
- * The wordmark: the name itself filled with the spectrum, pink on the first
- * letter to burnt orange on the last, outlined in ink so it reads on any
- * ground. The outline is what carries the contrast, not the fill.
- */
-export function Wordmark({ className = "" }: { className?: string }) {
-  return <span className={`wordmark ${className}`}>{site.title}</span>;
+/** The spectrum itself, as the site's mark: pink to burnt orange. */
+export function SpectrumMark({ className = "" }: { className?: string }) {
+  return <span aria-hidden="true" className={`bg-spectrum inline-block w-[2em] rounded-[3px] ${className}`} />;
 }
 
 export function SiteNav() {
@@ -27,9 +23,10 @@ export function SiteNav() {
       <Link
         href="/"
         aria-label="AI is a spectrum, home"
-        className={`inline-flex min-h-11 items-center no-underline ${home ? "invisible max-sm:hidden" : ""}`}
+        className={`flex items-center gap-2 font-display text-[1.05rem] font-bold tracking-tight no-underline ${home ? "invisible max-sm:hidden" : ""}`}
       >
-        <Wordmark className="text-[1.35rem] sm:text-[1.55rem]" />
+        <SpectrumMark className="h-[1.1em]" />
+        {site.title}
       </Link>
       <ul className="flex flex-wrap items-center gap-1.5 text-[0.92rem]">
         {links.map((link) => {

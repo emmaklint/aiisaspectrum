@@ -146,35 +146,6 @@
   background: var(--gradient-soft);
 }
 
-/* The wordmark: wide, heavy, the spectrum running across the whole name,
-   with an off-black outline. paint-order keeps the outline outside the fill
-   where supported, so the letters stay full-bodied. */
-.wordmark {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-  color: var(--color-ink);
-  background: var(--gradient-spectrum);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.5px var(--color-ink);
-  paint-order: stroke fill;
-  /* the trailing letter-spacing would otherwise push the orange off the end */
-  margin-right: -0.08em;
-  padding-right: 0.08em;
-}
-@media (forced-colors: active) {
-  .wordmark {
-    -webkit-text-fill-color: CanvasText;
-    background: none;
-    -webkit-text-stroke: 0;
-  }
-}
-
 /* Paper grain over the whole site: a coarse, uneven noise multiplied onto
    everything, so the ground, cards and colour all read as printed rather
    than flat screen colour. Fixed so it doesn't scroll, never catches clicks,
