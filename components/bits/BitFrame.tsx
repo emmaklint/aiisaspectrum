@@ -31,7 +31,9 @@ export function BitFrame({
         <span aria-hidden="true">←</span> All bits
       </Link>
       <p className="mt-6 text-[0.92rem]">
-        <span className="tag tag-dark mr-2">{capabilities[bit.capability].label}</span>
+        <span className={`tag tag-dark mr-2 inline-block rounded px-2 py-1 align-middle ${capabilities[bit.capability].tone}`}>
+          {capabilities[bit.capability].label}
+        </span>
         <span className="text-ink-muted">{capabilities[bit.capability].note}</span>
       </p>
       <h1 className="mt-2 text-[2.6rem] leading-[0.95] text-balance sm:text-[3.6rem]">{bit.title}</h1>
@@ -45,7 +47,7 @@ export function BitFrame({
           <ul className="mt-4 space-y-3">
             {related.map((e) => (
               <li key={e.name} className="text-[0.98rem] leading-relaxed">
-                <a href={e.href} target="_blank" rel="noreferrer" className="font-semibold text-ink underline decoration-crayon decoration-2 underline-offset-4">
+                <a href={e.href} target="_blank" rel="noreferrer" className="font-semibold text-link underline decoration-2 underline-offset-4">
                   {e.name}
                 </a>
                 <span className="text-ink-muted">. {e.idea}</span>
@@ -68,7 +70,7 @@ export function BitFrame({
         <p>{method.noAi}</p>
       </section>
       <p className="mt-10">
-        <Link href="/bits" className="font-medium underline decoration-crayon decoration-2 underline-offset-4">
+        <Link href="/bits" className="font-medium text-link underline decoration-2 underline-offset-4">
           ← Back to all bits
         </Link>
       </p>

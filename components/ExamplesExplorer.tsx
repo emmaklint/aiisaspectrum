@@ -198,7 +198,7 @@ export function ExamplesExplorer({
                   {cols.map((w) => (
                     <span key={w} className={`hidden h-full items-center justify-center md:flex ${way === w ? "bg-ink/5" : ""}`}>
                       {e.ways.includes(w) && (
-                        <span aria-label={short[w]} className={`h-3 w-3 rounded-full ${e.ways[0] === w ? "bg-crayon" : "bg-crayon-pink"}`} />
+                        <span aria-label={short[w]} className={`h-3 w-3 rounded-full ${e.ways[0] === w ? "bg-crayon" : "border-[1.5px] border-ink bg-crayon-pink"}`} />
                       )}
                     </span>
                   ))}
@@ -234,7 +234,7 @@ export function ExamplesExplorer({
 
       <p className="text-[0.82rem] text-ink-quiet">
         <span className="mr-1 inline-block h-2.5 w-2.5 rounded-full bg-crayon align-middle" /> main way of interacting
-        <span className="ml-4 mr-1 inline-block h-2.5 w-2.5 rounded-full bg-crayon-pink align-middle" /> also uses
+        <span className="ml-4 mr-1 inline-block h-2.5 w-2.5 rounded-full border-[1.5px] border-ink bg-crayon-pink align-middle" /> also uses
       </p>
     </div>
   );

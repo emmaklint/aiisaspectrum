@@ -18,12 +18,12 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
   icons: {
     icon:
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E0602F'/%3E%3Cstop offset='.35' stop-color='%23F28C86'/%3E%3Cstop offset='.65' stop-color='%2398A55A'/%3E%3Cstop offset='1' stop-color='%235E6B2A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' fill='url(%23g)'/%3E%3C/svg%3E",
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23F4A7BB'/%3E%3Cstop offset='.5' stop-color='%23F9BE8C'/%3E%3Cstop offset='1' stop-color='%23D2652A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' fill='url(%23g)'/%3E%3C/svg%3E",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F7E7E2",
+  themeColor: "#FFF8F3",
 };
 
 export default function RootLayout({
@@ -52,12 +52,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <div aria-hidden="true" className="relative z-20 flex h-1.5">
-          <span className="flex-1 bg-crayon" />
-          <span className="flex-1 bg-crayon-pink" />
-          <span className="flex-1 bg-olive" />
-          <span className="flex-1 bg-moss" />
-        </div>
+        <div aria-hidden="true" className="bg-spectrum relative z-20 h-1.5" />
         <SiteNav />
         {children}
         <SiteFooter />
