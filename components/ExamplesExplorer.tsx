@@ -217,7 +217,7 @@ export function ExamplesExplorer({
                       </a>
                       {related && (
                         <Link href={`/bits/${related.slug}`} className="underline decoration-ink/40 underline-offset-4">
-                          Feel it in a bit: {related.title}
+                          Try it in the playground: {related.title}
                         </Link>
                       )}
                     </p>

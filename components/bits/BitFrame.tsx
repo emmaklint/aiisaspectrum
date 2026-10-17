@@ -28,7 +28,7 @@ export function BitFrame({
         href="/bits"
         className="inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-ink/30 px-3.5 py-1 text-[0.88rem] font-medium no-underline hover:border-ink"
       >
-        <span aria-hidden="true">←</span> All bits
+        <span aria-hidden="true">←</span> Playground
       </Link>
       <p className="mt-6 text-[0.92rem]">
         <span className={`tag tag-dark mr-2 inline-block rounded px-2 py-1 align-middle ${capabilities[bit.capability].tone}`}>
@@ -56,7 +56,7 @@ export function BitFrame({
           </ul>
           <p className="mt-4 text-[0.9rem]">
             <Link href={`/examples?way=${bit.way}`} className="text-ink underline decoration-ink/40 underline-offset-4 hover:decoration-ink">
-              See more in the wild
+              See more examples
             </Link>
           </p>
         </section>
@@ -71,7 +71,7 @@ export function BitFrame({
       </section>
       <p className="mt-10">
         <Link href="/bits" className="font-medium text-link underline decoration-2 underline-offset-4">
-          ← Back to all bits
+          ← Back to the playground
         </Link>
       </p>
     </main>

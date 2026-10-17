@@ -4,24 +4,24 @@ export const home = {
   headline: "AI is a spectrum",
   belief:
     "Using AI doesn’t have to mean opening a chat and explaining what you want. Once we stop assuming it does, there are so many more possibilities.",
-  bits: { title: "Bits", body: "Small experiments to play with. Feel what AI can do without a chat box." },
-  examples: { title: "In the wild", body: "Products and research already doing it: pointing, noticing, stepping in." },
+  bits: { title: "Playground", body: "Small experiments to play with. Feel what AI can do without a chat box." },
+  examples: { title: "Examples", body: "Products and research already doing it: pointing, noticing, stepping in." },
 };
 
 export const bitsPage = {
-  heading: "Bits",
+  heading: "Playground",
   intro: "Five things AI can do, each tried without a chat box.",
 };
 
 export const examplesPage = {
-  heading: "In the wild",
+  heading: "Examples",
   intro: "Products and research already interacting with AI beyond the chat box.",
 };
 
 export const about = {
   heading: "About",
   body: [
-    "A companion to my essay on why chat is stuck in the middle. The examples collect what people are already building. The bits let you feel the difference yourself.",
+    "A companion to my essay on why chat is stuck in the middle. The examples collect what people are already building. The playground lets you feel the difference yourself.",
   ],
   whoHeading: "Who's behind it",
   who: "I'm Emma Klint, a designer and writer in Stockholm with an MSc in HCI. I explore AI as augmentation: expanding what it can be and what we can make with it. I write about AI, neurodivergence and living with technology that thinks in (Over)Thinking Out Loud.",

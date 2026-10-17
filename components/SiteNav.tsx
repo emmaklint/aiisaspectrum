@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 
 const links = [
-  { href: "/bits", label: "Bits" },
-  { href: "/examples", label: "In the wild" },
+  { href: "/bits", label: "Playground" },
+  { href: "/examples", label: "Examples" },
 ];
 
 /** The spectrum itself, as the site's mark: pink to burnt orange. */

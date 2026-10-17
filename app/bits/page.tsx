@@ -5,7 +5,7 @@ import { bits } from "@/content/bits";
 import { bitsPage } from "@/content/copy";
 import { capabilities, type Capability } from "@/content/capabilities";
 
-export const metadata: Metadata = { title: "Bits · AI is a spectrum" };
+export const metadata: Metadata = { title: "Playground · AI is a spectrum" };
 
 export default function BitsPage() {
   const order = Object.keys(capabilities) as Capability[];

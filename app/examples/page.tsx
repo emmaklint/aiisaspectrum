@@ -6,7 +6,7 @@ import { examplesPage } from "@/content/copy";
 import { examples } from "@/content/examples";
 import { ways, type Way } from "@/content/ways";
 
-export const metadata: Metadata = { title: "In the wild · AI is a spectrum" };
+export const metadata: Metadata = { title: "Examples · AI is a spectrum" };
 
 const isWay = (w: unknown): w is Way => typeof w === "string" && w in ways;
 
