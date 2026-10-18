@@ -25,7 +25,7 @@ export const about = {
   ],
   whoHeading: "Who's behind it",
   who: "I'm Emma Klint, a designer and writer in Stockholm with an MSc in HCI. I explore AI as augmentation: expanding what it can be and what we can make with it. I write about AI, neurodivergence and living with technology that thinks in (Over)Thinking Out Loud.",
-  newsletterUrl: "https://emmaklint.substack.com/",
+  newsletterUrl: "https://emmaklint.substack.com/?utm_source=aiisaspectrum.com&utm_medium=referral",
   methodHeading: "The method",
   method: [
     "An inspirational bit is a simple, working thing that lets you understand one property of a technology by using it (Sundström et al. 2011). I first used the method in my master’s thesis at KTH (Klint 2018), to help designers and developers imagine new uses for augmented reality.",

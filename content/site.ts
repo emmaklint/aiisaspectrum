@@ -1,5 +1,5 @@
 /**
- * Site-wide details. The essay isn't published yet — when it is, replace
+ * Site-wide details. Change
  * `essayUrl` here and every link on the page follows.
  */
 export const site = {
@@ -8,7 +8,7 @@ export const site = {
     "Chat is one way to interact with AI. A small collection of experiments, products and interaction ideas exploring what else it could feel like.",
   url: "https://aiisaspectrum.com",
 
-  essayUrl: "https://emmaklint.substack.com/",
+  essayUrl: "https://emmaklint.substack.com/p/ai-is-a-spectrum-and-chat-is-stuck?utm_source=aiisaspectrum.com&utm_medium=referral",
   essayLabel: "Read the essay",
 
   author: {
