@@ -15,5 +15,10 @@ export const site = {
     name: "Emma Klint",
     role: "Designer on a mission to redesign technology so more ways to be human become possible.",
     url: "https://emmaklint.com",
+    email: "emma@emmaklint.com",
   },
 };
+
+/** A mailto link with the subject filled in, so you can tell where a message came from. */
+export const contactHref = (subject = "AI is a spectrum") =>
+  `mailto:${site.author.email}?subject=${encodeURIComponent(subject)}`;

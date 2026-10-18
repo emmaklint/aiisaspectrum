@@ -2,6 +2,7 @@ import Link from "next/link";
 import { method, type Bit } from "@/content/bits";
 import { examples } from "@/content/examples";
 import { capabilities } from "@/content/capabilities";
+import { contactHref, site } from "@/content/site";
 
 /**
  * The shared frame around every bit: title and task on top, the bit in the
@@ -69,7 +70,14 @@ export function BitFrame({
         </p>
         <p>{method.noAi}</p>
       </section>
-      <p className="mt-10">
+      <p className="mt-10 text-[0.98rem] leading-relaxed">
+        Something unclear, or an idea for making this bit better?{" "}
+        <a href={contactHref(`${bit.title} (AI is a spectrum)`)} className="font-semibold text-link underline decoration-2 underline-offset-4">
+          Write to me
+        </a>
+        <span className="text-ink-muted"> at {site.author.email}</span>
+      </p>
+      <p className="mt-6">
         <Link href="/bits" className="font-medium text-link underline decoration-2 underline-offset-4">
           ← Back to the playground
         </Link>

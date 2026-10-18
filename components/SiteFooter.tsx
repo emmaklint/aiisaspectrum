@@ -1,5 +1,5 @@
 import { about } from "@/content/copy";
-import { site } from "@/content/site";
+import { contactHref, site } from "@/content/site";
 
 /** The shared footer, which is also the About section (#about). */
 export function SiteFooter() {
@@ -13,6 +13,13 @@ export function SiteFooter() {
             <p key={p} className="max-w-[52ch] text-[0.98rem] leading-relaxed">{p}</p>
           ))}
           <p className="max-w-[52ch] text-[0.98rem] leading-relaxed text-ink-muted">{about.who}</p>
+          <div className="rounded-lg border-[1.5px] border-ink/20 bg-surface/70 px-5 py-4">
+            <h3 className="text-[1.15rem] leading-tight">Questions or ideas?</h3>
+            <p className="mt-1.5 max-w-[48ch] text-[0.95rem] leading-relaxed">
+              Ask me anything, suggest an improvement, or tell me about an example I'm missing.{" "}
+              <a href={contactHref()} className={link}>{site.author.email}</a>
+            </p>
+          </div>
           <p className="flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem] font-medium">
             <a href={site.essayUrl} className={link}>{site.essayLabel}</a>
             <a href={about.newsletterUrl} className={link}>The newsletter</a>
