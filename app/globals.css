@@ -121,18 +121,21 @@
    visible grain on top so it reads like printed paper. */
 .hero-wash {
   background:
-    linear-gradient(to bottom, transparent 55%, var(--color-ground) 100%),
     radial-gradient(55% 80% at 8% 20%, rgba(244, 167, 187, 0.85), transparent 70%),
     radial-gradient(50% 75% at 50% 30%, rgba(249, 190, 140, 0.75), transparent 72%),
     radial-gradient(50% 80% at 95% 25%, rgba(210, 101, 42, 0.6), transparent 70%),
     var(--color-ground);
+  /* fade out at the bottom so the page grain carries on underneath */
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
 }
 .hero-grain {
   opacity: 0.8;
   mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.06 0 0 0 0 0.05 0 0 0 1.1 -0.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent);
-  mask-image: linear-gradient(to bottom, #000 65%, transparent);
+  /* hands over to the page grain before the wash starts fading */
+  -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent 55%);
+  mask-image: linear-gradient(to bottom, #000 35%, transparent 55%);
 }
 
 /* Gradient surfaces. Always left to right, pink to burnt orange. */
@@ -146,15 +149,15 @@
   background: var(--gradient-soft);
 }
 
-/* Paper grain over the whole site: a coarse, uneven noise multiplied onto
-   everything, so the ground, cards and colour all read as printed rather
-   than flat screen colour. Fixed so it doesn't scroll, never catches clicks,
-   and is light enough that text contrast barely moves. */
+/* Paper grain on the page background only: a coarse, uneven noise that
+   sits behind all content, so buttons, cards and text stay clean while the
+   ground reads as printed paper. Fixed so it doesn't scroll, and never
+   catches clicks. */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 60;
+  z-index: -1;
   pointer-events: none;
   opacity: 0.22;
   mix-blend-mode: multiply;
