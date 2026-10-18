@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { BitFrame } from "@/components/bits/BitFrame";
 import { PointBit } from "@/components/bits/PointBit";
 import { bits } from "@/content/bits";
+import { pageMetadata } from "@/lib/og";
 
 const bit = bits.find((b) => b.slug === "point-dont-describe")!;
 
-export const metadata: Metadata = { title: `${bit.title} · AI is a spectrum` };
+export const metadata: Metadata = pageMetadata(bit.title, bit.task, "/bits/point-dont-describe");
 
 export default function Page() {
   return (

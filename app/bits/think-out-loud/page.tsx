@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { BitFrame } from "@/components/bits/BitFrame";
 import { ThinkOutLoudBit } from "@/components/bits/ThinkOutLoudBit";
 import { bits } from "@/content/bits";
+import { pageMetadata } from "@/lib/og";
 
 const bit = bits.find((b) => b.slug === "think-out-loud")!;
 
-export const metadata: Metadata = { title: `${bit.title} · AI is a spectrum` };
+export const metadata: Metadata = pageMetadata(bit.title, bit.task, "/bits/think-out-loud");
 
 export default function Page() {
   return (

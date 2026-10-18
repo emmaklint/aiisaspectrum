@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/og";
 import { ExamplesExplorer } from "@/components/ExamplesExplorer";
 import { PageHeader } from "@/components/PageHeader";
 import { bits } from "@/content/bits";
@@ -6,7 +7,7 @@ import { examplesPage } from "@/content/copy";
 import { examples } from "@/content/examples";
 import { ways, type Way } from "@/content/ways";
 
-export const metadata: Metadata = { title: "Examples · AI is a spectrum" };
+export const metadata: Metadata = pageMetadata(examplesPage.heading, examplesPage.intro, "/examples");
 
 const isWay = (w: unknown): w is Way => typeof w === "string" && w in ways;
 

@@ -6,16 +6,17 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.title} — chat is one way to interact with AI`,
+  title: site.title,
   description: site.description,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: site.url,
-    title: `${site.title} — chat is one way to interact with AI`,
+    siteName: site.title,
+    url: "/",
+    title: site.title,
     description: site.description,
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", title: site.title, description: site.description },
   icons: {
     icon:
       "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23F4A7BB'/%3E%3Cstop offset='.5' stop-color='%23F9BE8C'/%3E%3Cstop offset='1' stop-color='%23D2652A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' fill='url(%23g)'/%3E%3C/svg%3E",

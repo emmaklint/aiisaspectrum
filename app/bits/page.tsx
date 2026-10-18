@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/og";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { bits } from "@/content/bits";
 import { bitsPage } from "@/content/copy";
 import { capabilities, type Capability } from "@/content/capabilities";
 
-export const metadata: Metadata = { title: "Playground · AI is a spectrum" };
+export const metadata: Metadata = pageMetadata(bitsPage.heading, bitsPage.intro, "/bits");
 
 export default function BitsPage() {
   const order = Object.keys(capabilities) as Capability[];
