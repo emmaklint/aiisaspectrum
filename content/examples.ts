@@ -209,4 +209,28 @@ export const examples: Example[] = [
     ways: ["ambient", "notice"],
     href: "https://mymind.com/",
   },
+  {
+    name: "DrawTalking",
+    gist: "Sketch things and say what they do",
+    idea: "You draw characters and objects, then point at them and say how they should behave, and the sketch comes to life as an interactive world.",
+    kind: "Research",
+    ways: ["mix"],
+    href: "https://doi.org/10.1145/3654777.3676334",
+  },
+  {
+    name: "Cocoa",
+    gist: "Hand any step of the AI's plan to yourself",
+    idea: "The AI's plan appears as a list of steps you can edit, and each step has a switch to give it to the AI or take it yourself, so the AI pauses and waits when it reaches your part.",
+    kind: "Research",
+    ways: ["stepIn"],
+    href: "https://doi.org/10.1145/3772318.3791673",
+  },
+  {
+    name: "VidTune",
+    gist: "Skim many soundtracks by their thumbnails",
+    idea: "The AI makes many music options for your video, each with a small picture showing its mood and energy, so you can compare and pick without listening to every track.",
+    kind: "Research",
+    ways: ["choose"],
+    href: "https://arxiv.org/abs/2601.12180",
+  },
 ];
