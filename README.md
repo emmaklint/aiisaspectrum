@@ -24,6 +24,7 @@ npm run lint    # tsc --noEmit
 | `content/ways.ts` | Ways of interacting. They tag the examples and tie each bit to them. |
 | `content/bits.ts` | The bits, live and on the way, plus the method note shown under each bit. |
 | `content/examples.ts` | The collection. Add an entry, tag it with `ways`, and a card appears. |
+| `docs/curating-examples.md` | What counts as an example. A weekly scheduled task follows it and proposes new entries as a pull request. |
 
 ## Pages
 
