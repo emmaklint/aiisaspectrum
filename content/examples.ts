@@ -233,4 +233,28 @@ export const examples: Example[] = [
     ways: ["choose"],
     href: "https://arxiv.org/abs/2601.12180",
   },
+  {
+    name: "JustShape",
+    gist: "Show a shape with your hands while you describe it",
+    idea: "You describe a 3D shape out loud while showing its size and form with your hands, and the gestures fill in the measurements that words leave vague.",
+    kind: "Research",
+    ways: ["mix"],
+    href: "https://doi.org/10.1145/3772318.3790641",
+  },
+  {
+    name: "ABScribe",
+    gist: "Keep several versions of a sentence in place",
+    idea: "Several AI versions of a passage live in the same spot in your text, and hovering over each one previews it in context so you can pick without losing the others.",
+    kind: "Research",
+    ways: ["choose"],
+    href: "https://doi.org/10.1145/3613904.3641899",
+  },
+  {
+    name: "CLEO",
+    gist: "Work on the same design while the AI does",
+    idea: "The AI builds a design step by step on a shared canvas while you keep working, so you can take over one element, edit its work in progress, or finish another part at the same time.",
+    kind: "Research",
+    ways: ["stepIn"],
+    href: "https://arxiv.org/abs/2603.02050",
+  },
 ];
