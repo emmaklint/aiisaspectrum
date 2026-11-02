@@ -281,4 +281,28 @@ export const examples: Example[] = [
     ways: ["mix"],
     href: "https://doi.org/10.1145/3706598.3713376",
   },
+  {
+    name: "Camera Coach",
+    gist: "Point the camera and get tips for the shot",
+    idea: "Point your camera at a scene, pick what you want the photo to be about, and tips on framing, light and zoom appear on screen one at a time before you take the picture.",
+    kind: "Product",
+    ways: ["notice", "choose"],
+    href: "https://blog.google/products-and-platforms/devices/pixel/how-to-use-camera-coach/",
+  },
+  {
+    name: "Granola",
+    gist: "Jot rough notes, get them filled in after",
+    idea: "You type a few rough notes during a meeting, and afterwards the AI builds full notes around them from the transcript, with your own words kept in black so you can see what was yours.",
+    kind: "Product",
+    ways: ["stepIn"],
+    href: "https://docs.granola.ai/help-center/taking-notes/ai-enhanced-notes",
+  },
+  {
+    name: "Harmonize",
+    gist: "Drop a cutout into a photo and it fits in",
+    idea: "Place a cut-out person or object where you want it in a photo, click once, and pick from three versions where its light, color and shadows match the scene.",
+    kind: "Product",
+    ways: ["point", "choose"],
+    href: "https://www.adobe.com/products/photoshop/harmonize-image-blender",
+  },
 ];
