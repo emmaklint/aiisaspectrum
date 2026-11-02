@@ -28,6 +28,10 @@ Every entry must pass all of these:
   must be flagged as preprints in the pull request.
 - **Products:** link the maker's own feature page, help article or docs. Not
   news coverage, reviews or blog posts about it.
+- **Lean toward products.** Emma wants more shipped products people can
+  actually use. Try to include at least one product each run, and when a
+  product and a paper show the same idea, pick the product. Products don't
+  need to be brand new; an older feature that passes is fine.
 - Open the link and check the interaction is actually described there.
 
 ## Writing the entry
