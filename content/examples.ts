@@ -257,4 +257,28 @@ export const examples: Example[] = [
     ways: ["stepIn"],
     href: "https://arxiv.org/abs/2603.02050",
   },
+  {
+    name: "Fairy Cursor",
+    gist: "A small helper that follows your cursor",
+    idea: "A small AI helper trails your mouse pointer, watches what you are doing, and offers help right where you are working, and you turn it down just by moving on.",
+    kind: "Research",
+    ways: ["notice", "ambient"],
+    href: "https://doi.org/10.1145/3800645.3813082",
+  },
+  {
+    name: "TaskLens",
+    gist: "Get a panel with only the tools for your task",
+    idea: "Say what you want to learn to do in complex software, and a panel appears with just the tools for that task, grouped by step, with more tools shown as you are ready for them.",
+    kind: "Research",
+    ways: ["reshape"],
+    href: "https://doi.org/10.1145/3800645.3813081",
+  },
+  {
+    name: "Tap&Say",
+    gist: "Tap near a mistake and say the fix",
+    idea: "Tap near a wrong word and say what it should be: the tap tells the AI where, and your voice tells it what.",
+    kind: "Research",
+    ways: ["mix"],
+    href: "https://doi.org/10.1145/3706598.3713376",
+  },
 ];
