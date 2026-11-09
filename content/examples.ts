@@ -305,4 +305,20 @@ export const examples: Example[] = [
     ways: ["point", "choose"],
     href: "https://www.adobe.com/products/photoshop/harmonize-image-blender",
   },
+  {
+    name: "Flash Fill",
+    gist: "Type a cell or two, the column fills itself",
+    idea: "Type what you want in a cell or two, and the spreadsheet spots the pattern and offers to fill in the rest of the column the same way.",
+    kind: "Product",
+    ways: ["demonstrate"],
+    href: "https://support.microsoft.com/en-us/office/using-flash-fill-in-excel-3f9bcf1e-db93-4890-94a0-1578341f73f7",
+  },
+  {
+    name: "Cursor Tab",
+    gist: "Press Tab to take the next edit, and the next",
+    idea: "While you write code, the AI guesses your next change from what you just edited and shows it in grey, and after you accept it, pressing Tab again jumps you to where the next change probably belongs.",
+    kind: "Product",
+    ways: ["ambient"],
+    href: "https://cursor.com/docs/tab/overview",
+  },
 ];
