@@ -321,4 +321,20 @@ export const examples: Example[] = [
     ways: ["ambient"],
     href: "https://cursor.com/docs/tab/overview",
   },
+  {
+    name: "Visual Story-Writing",
+    gist: "Edit a story by moving things on its map",
+    idea: "The editor draws your story as a map of characters, places and a timeline, and when you drag a character to a new place or move an event earlier, the text is rewritten to match and shown as changes you can accept or reject.",
+    kind: "Research",
+    ways: ["reshape"],
+    href: "https://doi.org/10.1145/3746059.3747758",
+  },
+  {
+    name: "Lightroom AI masks",
+    gist: "Let the AI select the subject, fix the edges yourself",
+    idea: "One click selects the subject, sky or a person in a photo, and you brush to add or take away parts of that selection before you adjust it, so the AI does the rough work and you finish the part it got wrong.",
+    kind: "Product",
+    ways: ["stepIn"],
+    href: "https://helpx.adobe.com/lightroom/desktop/edit-photos/masking.html",
+  },
 ];
