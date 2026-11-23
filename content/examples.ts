@@ -337,4 +337,20 @@ export const examples: Example[] = [
     ways: ["stepIn"],
     href: "https://helpx.adobe.com/lightroom/desktop/edit-photos/masking.html",
   },
+  {
+    name: "PowerPoint Designer",
+    gist: "Add a picture, pick a layout for the slide",
+    idea: "While you put pictures and text on a slide, a pane of finished layouts for that exact content shows up at the side, and you click the one you want instead of arranging it yourself.",
+    kind: "Product",
+    ways: ["choose", "ambient"],
+    href: "https://support.microsoft.com/en-us/powerpoint/create-professional-slide-layouts-with-designer",
+  },
+  {
+    name: "Smart Stack",
+    gist: "Raise your wrist, the right widget is on top",
+    idea: "The watch's stack of widgets brings up what fits the time of day, where you are and what you just did, and taps your wrist when it has something useful right now, so the screen changes around your day without you asking.",
+    kind: "Product",
+    ways: ["reshape", "notice"],
+    href: "https://support.apple.com/guide/watch/see-widgets-in-the-smart-stack-apdecf142fb9/watchos",
+  },
 ];
